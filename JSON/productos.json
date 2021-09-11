@@ -1,0 +1,64 @@
+[{
+    "id": 1,
+    "producto": "Tortillas de mesa #15",
+    "precio": 20,
+    "descripcion": "Un kilo de tortillas de maiz blancas",
+    "imagen": "img/tortillascard.jpg"
+},
+{
+    "id": 2,
+    "producto": "Tortillas taqueras #12",
+    "precio": 22,
+    "descripcion": "Un kilo de tortillas taqueras amarillas",
+    "imagen": "img/taquera.jpg"
+},
+{
+    "id": 3,
+    "producto": "Tortillas para enchiladas",
+    "precio": 20,
+    "descripcion": "Un paquete de tortillas rojas para enchiladas",
+    "imagen": "img/enchilada.jpg"
+},
+{
+    "id": 4,
+    "producto": "Tortillas Amarilla",
+    "precio": 20,
+    "descripcion": "Un kilo de tortillas amarillas",
+    "imagen": "img/amarillas.jpg"
+},
+{
+    "id": 5,
+    "producto": "Tostadas",
+    "precio": 25,
+    "descripcion": "Un paquete de tostadas rojas",
+    "imagen": "img/tostadas.png"
+},
+{
+    "id": 6,
+    "producto": "Frijoles enteros",
+    "precio": 20,
+    "descripcion": "Un litro de frijoles enteros",
+    "imagen": "img/frijol.jpg"
+},
+{
+    "id": 7,
+    "producto": "Frijoles enteros",
+    "precio": 10,
+    "descripcion": "Un medio litro de frijoles enteros",
+    "imagen": "img/frijol.jpg"
+},
+{
+    "id": 8,
+    "producto": "Frijoles guisados",
+    "precio": 30,
+    "descripcion": "Un litro de frijoles guisados",
+    "imagen": "img/guisados.jpg"
+},
+{
+    "id": 9,
+    "producto": "Frijoles guisados",
+    "precio": 15,
+    "descripcion": "Un medio litro de frijoles guisados",
+    "imagen": "img/guisados.jpg"
+}
+]
