@@ -10,20 +10,9 @@
       <button class="btn btn-outline-success" type="submit"><span class="iconify" data-icon="mdi:magnify"></span></button>
     </form>
   </div>
-  <div class="collapse navbar-collapse text-center" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-          <img src="img/iram.jpg" width="45" height="45" class="img-fluid rounded-circle avatar mr-2"
-            alt="https://generated.photos/" />  
-          Usuario
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="#">Configuración</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="index.php">Cerrar sesión</a></li>
-          </ul>
-        </li>
-      </ul>
+  <div class="mr-3 collapse navbar-collapse" id="navbarSupportedContent">
+  <div class="navbar-nav mr-3">
+        <a class="btn btn-outline-danger " aria-current="page" href="">Salir</a>
+      </div>
     </div>
 </nav>
