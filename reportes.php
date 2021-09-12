@@ -31,19 +31,19 @@
         <div class="col-10 p-3 border rounded shadow"> <!-- Inicia la col-10-->
         <div class="row text-center p-3"> <!-- Inicia la row-->
               <div class="col-12 col-sm-6 col-md-4 p-4">
-              <a href="reportes/empleados.php" class="btn btn-warning"><span class="iconify" data-icon="carbon:user-avatar-filled" data-width="60"></span><b>Empleados</b></a>
+              <a href="reportes_empleados.php" width="" class="btn btn-warning"><span class="iconify" data-icon="carbon:user-avatar-filled" data-width="60"></span><b>Empleados</b></a>
               </div>
               <div class="col-12 col-sm-6 col-md-4 p-4">
-                <a class="btn btn-warning"><span class="iconify" data-icon="ic:twotone-point-of-sale" data-width="60"></span><b>Ventas</b></a>
+                <a href="reportes_ventas.php" class="btn btn-warning"><span class="iconify" data-icon="ic:twotone-point-of-sale" data-width="60"></span><b>Ventas</b></a>
               </div>
               <div class="col-12 col-sm-6 col-md-4 p-4">
-                <a class="btn btn-warning"><span class="iconify" data-icon="zmdi:assignment-return" data-width="50"></span><b>Devoluciones</b></a>
+                <a href="reportes_devoluciones.php" class="btn btn-warning"><span class="iconify" data-icon="zmdi:assignment-return" data-width="50"></span><b>Devoluciones</b></a>
               </div>
               <div class="col-12 col-sm-6 col-md-4 p-4">
-                <a href="" class="btn btn-warning"><span class="iconify" data-icon="fluent:money-calculator-24-filled" data-width="60"></span><b>Gastos</b></a>
+                <a href="reportes_gastos.php" class="btn btn-warning"><span class="iconify" data-icon="fluent:money-calculator-24-filled" data-width="60"></span><b>Gastos</b></a>
               </div>
               <div class="col-12 col-sm-6 col-md-4 p-4">
-                  <a href="" class="btn btn-warning"><span class="iconify" data-icon="icon-park-outline:ad-product" data-width="60"></span><b>Productos</b></a>
+                  <a href="reportes_productos" class="btn btn-warning"><span class="iconify" data-icon="icon-park-outline:ad-product" data-width="60"></span><b>Productos</b></a>
               </div>
         </div>
         <div class="row">
