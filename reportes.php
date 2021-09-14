@@ -43,7 +43,7 @@
                 <a href="reportes_gastos.php" class="btn btn-warning"><span class="iconify" data-icon="fluent:money-calculator-24-filled" data-width="60"></span><b>Gastos</b></a>
               </div>
               <div class="col-12 col-sm-6 col-md-4 p-4">
-                  <a href="reportes_productos" class="btn btn-warning"><span class="iconify" data-icon="icon-park-outline:ad-product" data-width="60"></span><b>Productos</b></a>
+                  <a href="reportes_productos.php" class="btn btn-warning"><span class="iconify" data-icon="icon-park-outline:ad-product" data-width="60"></span><b>Productos</b></a>
               </div>
         </div>
         <div class="row">

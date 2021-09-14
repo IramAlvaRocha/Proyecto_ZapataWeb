@@ -40,7 +40,7 @@
         <div class="col-1"></div>
         <div class="col-10 p-3 border rounded shadow p-4 mb-5">
         <form class="row g-3" action="scripts/modificardevolucion_backend.php" method="post">
-      <div class="border fs-3 text-center border border-primary" class="bg-primary">Registrar devoluciones</div>
+      <div class="border fs-3 text-center border border-primary" class="bg-primary">Modificar devoluciones</div>
       <div class="col-12 col-md-12 col-lg-6">
             <label  class="form-label">Folio de devolución</label>
             <input type="text" class="form-control" name="folio" id="nombre" placeholder="Motivo de la devolución" required value="<?php echo $lista['id_Devolucion']?>" readonly="">

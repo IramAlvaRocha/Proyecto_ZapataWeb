@@ -33,7 +33,7 @@
           <p>Visualice o descargué el reporte para los empleados </p>
       </div>
       <div class="col-12 col-md-5 text-center p-2">
-      <iframe src="P5_1889240.pdf" embedded="True" width="95%" height="500px" frameborder="0"></iframe>
+      <iframe src="prueba.pdf" embedded="True" width="95%" height="500px" frameborder="0"></iframe>
       </div>
       <div class="col-1"></div>
   </div>

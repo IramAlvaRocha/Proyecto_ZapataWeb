@@ -40,7 +40,7 @@
         <div class="col-1"></div>
         <div class="col-10 p-3 border rounded shadow p-4 mb-5">
         <form class="row g-3" action="scripts/modificargasto_backend.php" method="post">
-      <div class="border fs-3 text-center border border-primary" class="bg-primary">Registrar gastos</div>
+      <div class="border fs-3 text-center border border-primary" class="bg-primary">Modificar gastos</div>
           <div class="col-12 col-md-12 col-lg-6">
             <label  class="form-label">Folio de gasto</label>
             <input type="text" class="form-control" name="folio" id="nombre" placeholder="Motivo del gasto" required value="<?php echo $lista['idGasto']?>" readonly="">

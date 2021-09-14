@@ -12,7 +12,7 @@
   </div>
   <div class="mr-3 collapse navbar-collapse" id="navbarSupportedContent">
   <div class="navbar-nav mr-3">
-        <a class="btn btn-outline-danger " aria-current="page" href="">Salir</a>
+        <a class="btn btn-outline-danger " aria-current="page" href="index.php">Salir</a>
       </div>
     </div>
 </nav> 
