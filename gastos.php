@@ -1,36 +1,27 @@
 <div class="row mt-3">
     <div class="col-1"></div>
     <div class="col-10 p-3 border rounded shadow p-4 mb-5">
-      <form class="row g-3" method="post" action="scripts/gastos_backend.php">
+      <form class="row g-3">
       <div class="border fs-3 text-center border border-primary" class="bg-primary">Registrar gastos</div>
           <div class="col-12 col-md-12 col-lg-6">
-            <label  class="form-label">Monto</label>
-            <input type="text" class="form-control" name="monto" id="nombre" placeholder="Motivo del gasto" required>
+            <label  class="form-label">Motivo</label>
+            <input type="text" class="form-control" name="nombre" id="nombre" placeholder="Motivo del gasto" required>
           </div>
           <div class="col-12 col-md-12 col-lg-6"> 
             <label  class="form-label">Fecha</label>
-            <input type="date" class="form-control" name="fecha" placeholder="Fecha del gasto" required>
+            <input type="date" class="form-control"  placeholder="Fecha del gasto" required>
           </div>
           <div class="col-12 col-md-12 col-lg-6">
             <label  class="form-label">Descripción</label>
-            <input type="text" class="form-control" name="descripcion" placeholder="Descripción del gasto" required>
+            <input type="text" class="form-control" placeholder="Descripción del gasto" required>
           </div>
           <div class="col-12 col-md-12 col-lg-6 mt-5 text-center">
-            <input type="submit" class="btn btn-success" value="Registrar devolución">
+            <button type="submit" class="btn btn-success">Registrar devolución</button>
           </div>
       </form>
     </div>
     <div class="col-1"></div>
 </div>
-
-<?php
-      include("scripts/conexion.php");
-      $conexion=conectar();
-
-      $consulta="SELECT * FROM gasto;";
-      $resultado=mysqli_query($conexion,$consulta);
-      
-?>
 
 <div class="row">
       <div class="col-1"></div>
@@ -45,21 +36,15 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <?php
-                          $contador=0;
-                          while($lista=mysqli_fetch_array($resultado, MYSQLI_ASSOC)){
-                            $contador++;
-                            echo '<tr>';
-                            echo '<th scope="row">' . $lista['fecha_gasto'] . '</th>';
-                            echo '<td>' . $lista['descripcion_gasto'] . '</td>';
-                            echo '<td>' . $lista['monto_gasto'] . '</td>';
-                            echo '<td>
-                              <a href="modificargastos.php?idgasto=' . $lista["idGasto"] . '" class="btn btn-outline-warning"><span class="iconify" data-icon="clarity:note-edit-solid" data-width="15"></span></a>  
-                              <a href="scripts/eliminargasto.php?idgasto=' . $lista["idGasto"] . '" class="btn btn-outline-danger"><span class="iconify" data-icon="ant-design:delete-filled" data-width="15"></span></a> 
-                            </td></tr>
-                        </tbody>';
-                          }
-                        ?>
+                        <tr>
+                        <th scope="row">21/08/2021</th>
+                        <td>Pago del servicio de luz</td>
+                        <td>962</td>
+                        <td>
+                        <a href="modificargastos.php" class="btn btn-outline-warning"><span class="iconify" data-icon="clarity:note-edit-solid" data-width="15"></span></a>  
+                        <a  class="btn btn-outline-danger"><span class="iconify" data-icon="ant-design:delete-filled" data-width="15"></span></a> 
+                        </td>
+                        </tr>
                     </tbody>
                     </table>
         </div>

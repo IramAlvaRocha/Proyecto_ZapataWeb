@@ -23,46 +23,30 @@
     </div>
     <div class="col-1 col-md-1 col-lg-1"></div>
   </div>
-
-  <?php
-  include("scripts/conexion.php");
-  $conexion=conectar();
-
-  $id_Devolucion=$_GET['iddev'];
-
-  $consulta="SELECT * FROM devolucion WHERE id_Devolucion='$id_Devolucion';";
-  $resultado=mysqli_query($conexion,$consulta);
-  $lista=mysqli_fetch_array($resultado, MYSQLI_ASSOC);
-?>
-  
     
 <div class="row mt-3" id="form-sign">
         <div class="col-1"></div>
         <div class="col-10 p-3 border rounded shadow p-4 mb-5">
-        <form class="row g-3" action="scripts/modificardevolucion_backend.php" method="post">
-      <div class="border fs-3 text-center border border-primary" class="bg-primary">Modificar devoluciones</div>
-      <div class="col-12 col-md-12 col-lg-6">
-            <label  class="form-label">Folio de devolución</label>
-            <input type="text" class="form-control" name="folio" id="nombre" placeholder="Motivo de la devolución" required value="<?php echo $lista['id_Devolucion']?>" readonly="">
-          </div>
+        <form class="row g-3">
+      <div class="border fs-3 text-center border border-primary" class="bg-primary">Registrar devoluciones</div>
           <div class="col-12 col-md-12 col-lg-6">
             <label  class="form-label">Motivo</label>
-            <input type="text" class="form-control" name="motivo" id="nombre" placeholder="Motivo de la devolución" required value="<?php echo $lista['motivo_Devolucion']?>">
+            <input type="text" class="form-control" name="nombre" id="nombre" placeholder="Motivo de la devolución" required>
           </div>
           <div class="col-12 col-md-12 col-lg-6"> 
             <label  class="form-label">Fecha</label>
-            <input type="date" class="form-control" name="fecha" placeholder="Fecha de la devolución" required value="<?php echo $lista['fecha_Devolucion']?>">
+            <input type="date" class="form-control"  placeholder="Fecha de la devolución" required>
           </div>
           <div class="col-12 col-md-12 col-lg-6">
             <label  class="form-label">Monto </label>
-            <input type="text" class="form-control" name="monto" id="correo" placeholder="Monto de la devolución" required value="<?php echo $lista['monto_Devolucion']?>">
+            <input type="text" class="form-control" name="correo" id="correo" placeholder="Monto de la devolución" required>
           </div>
           <div class="col-12 col-md-12 col-lg-6">
             <label  class="form-label">Perdida</label>
-            <input type="text" class="form-control" name="perdida" placeholder="Cantidad de dinero en perdidas" required value="<?php echo $lista['perdida_Devolucion']?>">
+            <input type="text" class="form-control" placeholder="Cantidad de dinero en perdidas" required>
           </div>
               <div class="col-6 col-md-6 col-lg-6 mt-5 text-center">
-                <input type="submit" class="btn btn-success" value="Modificar datos">
+                <a href="" type="button" class="btn btn-success">Modificar datos</a>
               </div>
               <div class="col-6 col-md-6 col-lg-6 mt-5 text-center">
               <a href="dashboard.php" type="button" class="btn btn-danger">Cancelar</a>

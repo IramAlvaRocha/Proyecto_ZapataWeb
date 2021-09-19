@@ -1,7 +1,3 @@
-<?php
- session_start();
- unset($_SESSION['compras']);
-?>
 <?php include 'includes/header.php' ?>
 
 <nav class="navbar navbar-expand-lg navbar-light" class="bg-light">

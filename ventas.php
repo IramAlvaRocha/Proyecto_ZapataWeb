@@ -6,39 +6,35 @@
           <div col-1></div>
           <div col-10>
           <table class="table table-bordered table-hover text-center">
-<?php
-      include("scripts/conexion.php");
-      $conexion=conectar();
-
-      $consulta="SELECT * FROM venta;";
-      $resultado=mysqli_query($conexion,$consulta);
-      
-?>
                 <thead>
                     <tr>
                     <th scope="col">#Venta</th>
                     <th scope="col">Nombre de empleado</th>
-                    <th scope="col">Fecha de venta</th>
                     <th scope="col">Total de venta</th>
+                    <th scope="col">Fecha de venta</th>
                     <th scope="col">Gestion</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <?php
-                          $contador=0;
-                          while($lista=mysqli_fetch_array($resultado, MYSQLI_ASSOC)){
-                            $contador++;
-                            echo '<tr>';
-                            echo '<th scope="row">' . $contador . '</th>';
-                            echo '<td>' . $lista['folio_EmpleadoFK'] . '</td>';
-                            echo '<td>' . $lista['fecha_Venta'] . '</td>';
-                            echo '<td>$ ' . $lista['total_Venta'] . ' MXN</td>';
-                            echo '<td>
-                              <a href="scripts/eliminarventa.php?idventa=' . $lista["id_Venta"] . '" class="btn btn-outline-danger"><span class="iconify" data-icon="ant-design:delete-filled" data-width="15"></span></a> 
-                            </td></tr>';
-                          }
-                        ?>
+                    <tr>
+                    <th scope="row">1</th>
+                    <td>Jean Villanueva</td>
+                    <td>$2</td>
+                    <td>32/06/21</td>
+                    <td><button class="btn btn-outline-warning" type="button"><span class="iconify" data-icon="clarity:note-edit-solid" data-width="15"></span></button>
+                        <button class="btn btn-outline-danger" type="button"><span class="iconify" data-icon="ant-design:delete-filled" data-width="15"></span></button>
+                        </td>
+                    </tr>
                     
+                    <tr>
+                    <th scope="row">2</th>
+                    <td>Vivivan Gonzalez</td>
+                    <td>$-5</td>
+                    <td>22/06/21</td>
+                    <td><button class="btn btn-outline-warning" type="button"><span class="iconify" data-icon="clarity:note-edit-solid" data-width="15"></span></button>
+                        <button class="btn btn-outline-danger" type="button"><span class="iconify" data-icon="ant-design:delete-filled" data-width="15"></span></button>
+                    </td>
+                    </tr>
                 </tbody>
                 </table>
           </div>
