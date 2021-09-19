@@ -23,40 +23,41 @@
     </div>
     <div class="col-1 col-md-1 col-lg-1"></div>
   </div>
-    
-<div class="row mt-3" id="form-sign">
-        <div class="col-1"></div>
-        <div class="col-10 p-3 border rounded shadow  mb-5">
-          <div class="row text-center p-5">
-          <div class="col-12 col-md-3 col-lg-4 shadow mb-3 ">
-          <span class="iconify" data-icon="carbon:user-avatar-filled" data-width="60"></span>
-              <p>Empleados</p>
-            </div>
-            <div class="col-12 col-md-3 col-lg-4  shadow mb-3">
-            <span class="iconify" data-icon="ic:twotone-point-of-sale" data-width="60"></span>
-              <p>Ventas</p>
-            </div>
-            <div class="col-12 col-md-3 col-lg-4   shadow mb-3 ">
-            <span class="iconify" data-icon="zmdi:assignment-return" data-width="60"></span>
-              <p>Devoluciones</p>
-            </div>
-            <div class="col-12 col-md-3 col-lg-4  shadow mb-3 ">
-            <span class="iconify" data-icon="fluent:money-calculator-24-filled" data-width="60"></span>
-              <p>Gastos</p>
-            </div>
-            <div class="col-12 col-md-3 col-lg-4  shadow mb-3 ">
-            <span class="iconify" data-icon="icon-park-outline:ad-product" data-width="60"></span>
-              <p>Productos</p>
-            </div>
-          </div>
+<div class="row text-center mt-2 p-3">
+  <h1>Haga click en el reporte que desea visualizar</h1>
+</div>
+<div class="row mt-1" id="form-sign">
+        <div class="col-1"></div>  <!-- Fin e inicio de la columna col-1 -->
+        <div class="col-10 p-3 border rounded shadow"> <!-- Inicia la col-10-->
+        <div class="row text-center p-3"> <!-- Inicia la row-->
+              <div class="col-12 col-sm-6 col-md-4 p-4">
+              <a href="reportes_empleados.php" width="" class="btn btn-warning"><span class="iconify" data-icon="carbon:user-avatar-filled" data-width="60"></span><b>Empleados</b></a>
+              </div>
+              <div class="col-12 col-sm-6 col-md-4 p-4">
+                <a href="reportes_ventas.php" class="btn btn-warning"><span class="iconify" data-icon="ic:twotone-point-of-sale" data-width="60"></span><b>Ventas</b></a>
+              </div>
+              <div class="col-12 col-sm-6 col-md-4 p-4">
+                <a href="reportes_devoluciones.php" class="btn btn-warning"><span class="iconify" data-icon="zmdi:assignment-return" data-width="50"></span><b>Devoluciones</b></a>
+              </div>
+              <div class="col-12 col-sm-6 col-md-4 p-4">
+                <a href="reportes_gastos.php" class="btn btn-warning"><span class="iconify" data-icon="fluent:money-calculator-24-filled" data-width="60"></span><b>Gastos</b></a>
+              </div>
+              <div class="col-12 col-sm-6 col-md-4 p-4">
+                  <a href="reportes_productos.php" class="btn btn-warning"><span class="iconify" data-icon="icon-park-outline:ad-product" data-width="60"></span><b>Productos</b></a>
+              </div>
         </div>
-        <div class="col-1"></div>
         <div class="row">
             <div class="col-1"></div>
             <div class="col-10">
-            <a href="dashboard.php" class="btn btn-danger">Volver</a>
+              <a href="dashboard.php" class="btn btn-danger">Volver</a>
             </div>
             <div class="col-1"></div>
-        </div>
-    </div>
+          </div>
+        </div>   
+        <div class="col-1"></div>
+</div><!-- Fin de la row dentro de la col-10 -->
+
     <?php include 'includes/footer.php'?>
+
+
+

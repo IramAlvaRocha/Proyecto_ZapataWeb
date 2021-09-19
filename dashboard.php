@@ -9,6 +9,7 @@
     <link rel="icon" href="./img/favicon.ico" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
     <link href="https://fonts.googleapis.com/css2?family=GFS+Neohellenic:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
     <link rel="stylesheet" href="./css/styledash.css">
@@ -50,6 +51,38 @@
           </div>
         </div>
       </section>
+<?php
+  include("scripts/conexion.php");
+  $conexion=conectar();
+
+  $consultaVentas="SELECT * FROM venta;";
+      $resultadoVentas=mysqli_query($conexion,$consultaVentas);
+      $ContadorVentas=0;
+      while($listaVentas=mysqli_fetch_array($resultadoVentas, MYSQLI_ASSOC)){
+          $ContadorVentas+=$listaVentas['total_Venta'];
+      };
+
+  $consultaProductos="SELECT * FROM producto;";
+      $resultadoProductos=mysqli_query($conexion,$consultaProductos);
+      $ContadorProductos=0;
+      while($listaProductos=mysqli_fetch_array($resultadoProductos, MYSQLI_ASSOC)){
+          $ContadorProductos++;
+      };
+
+  $consultaDevoluciones="SELECT * FROM devolucion;";
+      $resultadoDevoluciones=mysqli_query($conexion,$consultaDevoluciones);
+      $ContadorDevoluciones=0;
+      while($listaDevoluciones=mysqli_fetch_array($resultadoDevoluciones, MYSQLI_ASSOC)){
+          $ContadorDevoluciones++;
+      };
+
+  $consultaEmpleados="SELECT * FROM empleado;";
+      $resultadoEmpleados=mysqli_query($conexion,$consultaEmpleados);
+      $ContadorEmpleados=0;
+      while($listaEmpleados=mysqli_fetch_array($resultadoEmpleados, MYSQLI_ASSOC)){
+          $ContadorEmpleados++;
+      };
+?>
       <section class="bg-mix">
         <div class="container ">
           <div class="card border rounded shadow p-4 mb-5">
@@ -58,25 +91,25 @@
                 <div class="col-md-3 d-flex col stat my-3">
                   <div class="mx-auto">
                     <h6 class="text-muted">Total de ventas</h6>
-                    <h3 class="fw-bold text-center">$10,000</h3>
+                    <h3 class="fw-bold text-center"><?php echo $ContadorVentas; ?></h3>
                   </div>
                 </div>
                 <div class="col-md-3 d-flex col stat my-3">
                   <div class="mx-auto">
                     <h6 class="text-muted">Productos activos</h6>
-                    <h3 class="fw-bold text-center">13</h3>
+                    <h3 class="fw-bold text-center"><?php echo $ContadorProductos; ?></h3>
                   </div>
                 </div>
                 <div class="col-md-3 d-flex col stat my-3">
                   <div class="mx-auto">
                     <h6 class="text-muted">Cantidad de devoluciones</h6>
-                    <h3 class="fw-bold text-center">26</h3>
+                    <h3 class="fw-bold text-center"><?php echo $ContadorDevoluciones; ?></h3>
                   </div>
                 </div>
                 <div class="col-md-3 d-flex col stat my-3">
                   <div class="mx-auto">
                     <h6 class="text-muted">Cantidad de empleados</h6>
-                    <h3 class="fw-bold text-center">10</h3>
+                    <h3 class="fw-bold text-center"><?php echo $ContadorEmpleados; ?></h3>
                   </div>
                 </div>
                 </div>

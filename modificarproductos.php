@@ -23,30 +23,42 @@
     </div>
     <div class="col-1 col-md-1 col-lg-1"></div>
   </div>
-    
+
+
+  <?php
+  include("scripts/conexion.php");
+  $conexion=conectar();
+
+  $id_Producto=$_GET['idproducto'];
+
+  $consulta="SELECT * FROM producto WHERE folio_Producto='$id_Producto';";
+  $resultado=mysqli_query($conexion,$consulta);
+  $lista=mysqli_fetch_array($resultado, MYSQLI_ASSOC);
+?>
+
 <div class="row mt-3" id="form-sign">
         <div class="col-1"></div>
         <div class="col-10 p-3 border rounded shadow p-4 mb-5">
-        <form class="row g-3">
-      <div class="border fs-3 text-center border border-primary" class="bg-primary">Registrar producto nuevo</div>
+        <form class="row g-3" action="scripts/modificarproducto_backend.php" method="post">
+      <div class="border fs-3 text-center border border-primary" class="bg-primary">Modificar producto</div>
           <div class="col-12 col-md-12 col-lg-6">
             <label  class="form-label">Folio</label>
-            <input type="text" class="form-control" name="nombre" id="nombre" placeholder="Folio del nuevo producto" required>
+            <input type="text" class="form-control" name="folio" id="nombre" placeholder="Folio del nuevo producto" required value="<?php echo $lista['folio_Producto']?>" readonly="">
           </div>
           <div class="col-12 col-md-12 col-lg-6"> 
             <label  class="form-label">Nombre</label>
-            <input type="text" class="form-control"  placeholder="Nombre del producto" required>
+            <input type="text" class="form-control" name="nombre" placeholder="Nombre del producto" required value="<?php echo $lista['nombre_Producto']?>">
           </div>
           <div class="col-12 col-md-12 col-lg-6">
             <label  class="form-label">Precio</label>
-            <input type="number" class="form-control" name="correo" id="correo" placeholder="Precio del producto" required>
+            <input type="text" class="form-control" name="precio" id="correo" placeholder="Precio del producto" required value="<?php echo $lista['precio_Producto']?>">
           </div>
           <div class="col-12 col-md-12 col-lg-6">
             <label  class="form-label">Descripción</label>
-            <input type="text" class="form-control" placeholder="Descripción del producto" required>
+            <input type="text" class="form-control" name="descripcion" placeholder="Descripción del producto" required value="<?php echo $lista['descripcion_Producto']?>">
           </div>
               <div class="col-6 col-md-6 col-lg-6 mt-5 text-center">
-                <a href="" type="button" class="btn btn-success">Modificar datos</a>
+                <input type="submit" class="btn btn-success" value="Modificar datos">
               </div>
               <div class="col-6 col-md-6 col-lg-6 mt-5 text-center">
               <a href="dashboard.php" type="button" class="btn btn-danger">Cancelar</a>
