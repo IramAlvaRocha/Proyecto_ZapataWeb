@@ -3,13 +3,10 @@
  unset($_SESSION['compras']);
 ?>
 <?php include 'includes/header.php' ?>
-
 <nav class="navbar navbar-expand-lg navbar-light" class="bg-light">
   <div class="container-fluid">
     <a class="navbar-brand mx-auto nombre-logo"  href="index.php">
-    <img src="./img/logo-final.png" alt="" width="50" height="50">
-    TORTILLERIA ZAPATA
-    </a>  
+    <img src="./img/logo-final.png" alt="" width="50" height="50">TORTILLERIA ZAPATA</a>  
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -61,18 +58,6 @@
                             <input type="password" name="contrasena" id="form3Example4" class="form-control form-control-lg"
                             placeholder="Contraseña" required="" />
                         </div>
-
-                        <!--<div class="d-flex justify-content-between align-items-center">-->
-                            <!-- Checkbox -->
-                           <!-- <div class="form-check mb-0">
-                            <input class="form-check-input me-2" type="checkbox" value="" id="form2Example3" />
-                            <label class="form-check-label" for="form2Example3">
-                                Recuerdame 
-                            </label>
-                            <br>
-                            </div>
-                            
-                        </div>-->
                         <div class=" text-lg-center ms-auto pt-2">
                             <input type="submit" class="btn btn-outline-success btn-sm" value="Ingresar">
                         </div>
@@ -84,7 +69,4 @@
     </div>
     <div class="col-1"></div>
 </div>
-
-
-
 <?php include 'includes/footer.php' ?>

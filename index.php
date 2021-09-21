@@ -9,8 +9,8 @@
   </div>
   <div class="col-1 col-lg-2"></div>
 </div>
-
-<div class="row">   
+<div c
+lass="row">   
     <div class="col-12">
     <div id="carouselExampleCaptions" class="carousel slide carrusel-size" data-bs-ride="carousel">
   <div class="carousel-indicators">

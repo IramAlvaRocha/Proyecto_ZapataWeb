@@ -28,22 +28,20 @@
 
     <div class=" container mt-5 mb-2 col-12">
         <div class="row">
-            <div class="col-12 col-md-12 col-lg-6 ">
-            <form class="d-flex">
-                <label for="">Código de producto</label>
+            <div class="col-12 col-md-12 col-lg-6 text-center">
+            <form class="d-flex ">
+              <label class="p-2 align-content-center" for=""><b>Código de producto</b></label>
                 <input class="form-control me-2" type="text" id="busqueda" name="busqueda" placeholder="Buscar producto" aria-label="Search">
                 <button class="btn btn-success" type="submit">Buscar</button>
             </form>
-            <div class="" name="ResultDiv" id="ResultDiv" style="background-color:#E3E3E3;font-size:40px;margin-left:99px;width:70%;">
-
-            </div>
-            <div class="col-12 col-md-12 col-lg-6 text-center ">
-            <?php include 'scripts/preciototal.php';?>
+                 <div class=" text-center text-success" name="ResultDiv" id="ResultDiv" >
             </div>
         </div>
+        <div class="col-lg-6 text-center justify-content-center align-content-evenly">
+            <p class=""><?php include 'scripts/preciototal.php';?></p>
+        </div>
     </div>
-    
-
+    <br><br><br>
         <div class="row">
             <table class="table table-bordered shadow">
                 <thead>
@@ -58,33 +56,12 @@
                 </thead>
                 <tbody>
                     <?php include 'scripts/listaventa.php';?>
-                    <!--
-                    <tr>
-                        <th scope="row">750120</th>
-                        <td>Tortilla Enchiladas KG</td>
-                        <td>20.00</td>
-                        <td>
-                            <div class="input-group text-center">
-                                <button class="btn btn-outline-secondary" type="button">-</button>
-                                <input type="number" step class="form-control text-center" placeholder=" 2 ">
-                                 <button class="btn btn-outline-secondary" type="button">+</button> 
-                            </div>
-                        </td>
-                        <td>40.00</td>
-                        <td>
-                            <button name="accion" value="cancelar" type="submit" class="btn btn-danger">
-                                X
-                            </button>
-                        </td>
-                    </tr>
-                    -->
                 </tbody>
             </table>
 
         </div>
 
         <div class="row shadow p-3">
-            <form  id="formventa"  action="scripts/terminarventa.php" method="POST">
                 <div class="col-12 col-lg-6 d-flex">
                     <span class="input-group-text" id="inputGroup-sizing-default">Pago del Cliente $:</span>
                     <input type="text" name="total" id="total" class="form-control" placeholder="Ingrese el pago del cliente" required>
@@ -95,7 +72,7 @@
                     </button>
                 </div>
             </form>
-            <div class="col-12 col-lg-6 text-center">
+            <div class="col-12 col-lg-6 text-center mt-3">
             <a href="scripts/cancelarventa.php"><button name="" class="btn btn-danger">
                 Cancelar Venta
             </button></a>

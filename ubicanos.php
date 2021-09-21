@@ -5,9 +5,7 @@
 <?php include 'includes/header.php'?>
 <?php include 'includes/navbar.php'?>
 
-
 <div class="row text-center">
-
 <div class="col-12 col-md-12 col-lg-6 shadow align-self-center">
     <div class="row text-center">
          <div class="col-12 col-md-12 col-lg-12 text-center">
@@ -38,9 +36,6 @@
 <div class="col-12 col-md-12 col-lg-6 text-center">
 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d448.6040179912954!2d-100.27819617803434!3d25.907888008648907!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x86628d43cd68ec0f%3A0x7d8fe41a6deb182c!2sTortilleria%20Zapata!5e0!3m2!1ses-419!2smx!4v1631004392307!5m2!1ses-419!2smx" width="500" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
 </div>
-
 </div>
-
-
 <?php include 'includes/footer.php'?>
         
