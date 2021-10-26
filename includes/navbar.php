@@ -33,7 +33,7 @@
         </ul>
         </li>
       </ul>
-      <form class="d-flex">
+      <form class="d-flex d-none">
         <input class="form-control me-2" type="search" placeholder="Buscar producto" aria-label="Search">
         <button class="btn btn-success" type="submit">Buscar</button>
       </form>
