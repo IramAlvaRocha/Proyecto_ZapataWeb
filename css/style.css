@@ -1,22 +1,11 @@
-:root {
-  --light: #ffffff;
-}
-
 body {
   font-family: "Muli", sans-serif !important;
   font-weight: 300;
+  text-decoration: none !important;
 }
 
 .bg-light {
-  background-color: var(--light) !important;
-}
-
-#ResultDiv {
-  display: flex;
-  color: black;
-  width: 50px;
-  justify-content: center;
-  align-content: center;
+  background-color: #e2e2f2 !important;
 }
 
 .items {

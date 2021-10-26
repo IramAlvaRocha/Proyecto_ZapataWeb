@@ -5,7 +5,7 @@
 <?php include 'includes/header.php'?>
 <?php include 'includes/navbar.php'?>
 
-<div class="row text-center">
+<div class="row text-center d-flex align-items-center">
 <div class="col-12 col-md-12 col-lg-6 shadow align-self-center">
     <div class="row text-center">
          <div class="col-12 col-md-12 col-lg-12 text-center">
