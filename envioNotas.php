@@ -9,10 +9,7 @@
                   <?php
                     include("scripts/scriptmenadmin.php");
                   ?>
-                  <!--
-                  <option selected>Seleccione un empleado</option>
-                  <option value="Si">Sí</option>
-                  <option value="No">No</option> -->
+
                 </select>
               </div>
               <div class="col-12 col-md-12 col-lg-12">

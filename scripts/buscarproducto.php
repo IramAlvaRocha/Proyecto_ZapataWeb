@@ -2,10 +2,13 @@
 <style>
 #producto_buscado{
   color:black;
+  margin: 10px;
 }
 #producto_buscado:hover{
   color:green;
+  background-color: rgba(0, 255, 30, .25);
 }
+
 </style>
 <?php
 include("conexion.php");

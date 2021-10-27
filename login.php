@@ -30,8 +30,7 @@
     </div>
   </div>
 </nav>
-<br>
-<div class="row mt-2 mb-5 mx-auto">
+<div class=" p-5 row mt-2 mb-5 mx-auto rounded wh-100" style="background-color: rgba(0, 0, 0, 0.03);" >
     <div class="col-1"></div>
     <div class="col-10">
             <section class="vh-auto mt-2">
@@ -46,8 +45,8 @@
                         <!-- Email input -->
                         <div class="form-outline mb-4">
                         <span class="iconify" data-icon="mdi:account-circle" data-width="45" data-height="25"></span>
-                            <label class="form-label" for="form3Example3">Folio de empleado</label>
-                            <input type="text" name="folio" id="form3Example3" class="form-control form-control-lg"
+                            <label class="form-label">Folio de empleado</label>
+                            <input type="text" name="folio"  class="w-100 form-control form-control-lg"
                             placeholder="Ingresa folio de empleado" required="" />
                         </div>
 
