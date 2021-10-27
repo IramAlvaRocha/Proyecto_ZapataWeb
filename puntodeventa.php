@@ -1,49 +1,49 @@
 <?php include 'scripts/scriptpv.php'?>
 <?php include 'includes/header.php' ?>
-<?php include 'includes/navbar.php' ?>
 
-<div class=" container text-center">
+<div class=" container-fluid text-center p-3 align-items-center">
         <div class="row mt-2">
-            <div class="col-12">
-                <h1><span class="iconify" data-icon="mdi:point-of-sale" data-width="75"></span>PUNTO DE VENTA</h1>
+            <div class="col-12 col-lg-4">
+                <h2><span class="iconify" data-icon="mdi:point-of-sale" data-width="65"></span>Área de ventas</h2>
             </div>
-        </div>
-    </div>
-
-    <div class="container border">
-        <div class="row p-2 shadow rounded">
-            <div class="col-6 text-center">
-                <?php
+            <div class="col-12 col-lg-8 d-flex align-items-center justify-content-around">
+                   <?php
                 $nombreEmp = $_SESSION['nombreemp'];  
-                echo "<h4><span class='iconify' data-icon='clarity:employee-solid' data-width='35'></span>Empleado: $nombreEmp</h4>" ?>
-            </div>
-            <div class="col-6 text-center">
-            <?php
-             $folioemp = $_SESSION['empleado'];
-             echo "<h4><span class='iconify' data-icon='fa-solid:id-badge' data-width='25'></span>Folio: $folioemp </h4>" ?>
-            </div>
+                echo "<h5>Empleado: $nombreEmp</h5>" ;
+                echo " <h5> Fecha: ". date('n / j / Y')." </h5>";
+                ?>
+                <div class="btn-group">
+                  <button type="button" class="btn btn-success dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                    Menú
+                  </button>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="notas.php">Mensajes</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item" href="index.php">Cerrar sesión</a></li>
+                  </ul>
+                </div>
+           </div>
         </div>
     </div>
 
 
     <div class=" container mt-5 mb-2 col-12">
+    <?php include ("scripts/newmail.php"); ?>
         <div class="row">
-            <div class="col-12 col-md-12 col-lg-6 ">
-            <form class="d-flex">
-                <label for="">Código de producto</label>
+            <div class="col-12 col-md-12 col-lg-8 text-center">
+            <form class="d-flex flex-row justify-content-space-evenly">
+              <label class="align-content-center" for=""><b>Código de producto</b></label>
                 <input class="form-control me-2" type="text" id="busqueda" name="busqueda" placeholder="Buscar producto" aria-label="Search">
-                <button class="btn btn-success" type="submit">Buscar</button>
             </form>
-            <div class="" name="ResultDiv" id="ResultDiv" style="background-color:#E3E3E3;font-size:40px;margin-left:99px;width:70%;">
-
-            </div>
-            <div class="col-12 col-md-12 col-lg-6 text-center ">
-            <?php include 'scripts/preciototal.php';?>
+                 <div class=" text-center text-success d-flex flex-column w-100" name="ResultDiv" id="ResultDiv" >
             </div>
         </div>
+        <div class="col-lg-4 text-center justify-content-center align-content-evenly">
+            <p class=""><?php include 'scripts/preciototal.php';?></p>
+            
+        </div>
     </div>
-    
-
+    <br><br><br>
         <div class="row">
             <table class="table table-bordered shadow">
                 <thead>
@@ -58,48 +58,33 @@
                 </thead>
                 <tbody>
                     <?php include 'scripts/listaventa.php';?>
-                    <!--
-                    <tr>
-                        <th scope="row">750120</th>
-                        <td>Tortilla Enchiladas KG</td>
-                        <td>20.00</td>
-                        <td>
-                            <div class="input-group text-center">
-                                <button class="btn btn-outline-secondary" type="button">-</button>
-                                <input type="number" step class="form-control text-center" placeholder=" 2 ">
-                                 <button class="btn btn-outline-secondary" type="button">+</button> 
-                            </div>
-                        </td>
-                        <td>40.00</td>
-                        <td>
-                            <button name="accion" value="cancelar" type="submit" class="btn btn-danger">
-                                X
-                            </button>
-                        </td>
-                    </tr>
-                    -->
                 </tbody>
             </table>
 
         </div>
 
-        <div class="row shadow p-3">
-            <form  id="formventa"  action="scripts/terminarventa.php" method="POST">
-                <div class="col-12 col-lg-6 d-flex">
-                    <span class="input-group-text" id="inputGroup-sizing-default">Pago del Cliente $:</span>
+        <div class="row shadow d-flex flex-row align-items-center p-3">
+                <div class="col-12 col-lg-6 d-flex flex-row justify-conten-evenly">
+                    <p class="input-group-text" id="inputGroup-sizing-default">Pago:</span> 
+                    &nbsp;
                     <input type="text" name="total" id="total" class="form-control" placeholder="Ingrese el pago del cliente" required>
+                    &nbsp;&nbsp;&nbsp;&nbsp;
                 </div>
-                <div class="col-12 col-lg-6 text-center">
+                <div class="col-12 col-lg-3">
                     <button  form="formventa" type="submit" class="btn btn-success">
                         Terminar Venta
                     </button>
                 </div>
             </form>
-            <div class="col-12 col-lg-6 text-center">
+            <div class="col-12 col-lg-3">
             <a href="scripts/cancelarventa.php"><button name="" class="btn btn-danger">
                 Cancelar Venta
             </button></a>
             </div>
         </div>
+            </button></a>
+            </div>
+        </div>
+        
         
 <?php include 'includes/footer.php' ?>

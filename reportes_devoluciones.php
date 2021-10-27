@@ -1,47 +1,115 @@
-<!doctype html>
-<html lang="es">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<?php
+session_start();
+ob_start();
+require('fpdf/fpdf.php');
+require('scripts/conexion.php');
 
-    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
-    <link rel="icon" href="./img/favicon.ico" type="image/x-icon">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=GFS+Neohellenic:wght@400;700&display=swap" rel="stylesheet">
-    
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
-    <link rel="stylesheet" href="./css/styledash.css">
-    <title>Tortilleria Zapata</title>
-  </head>
-  <body>
+$conexion = conectar();
 
-  <div class="row">
-      <div class="col-1"></div>
-      <div class="col-10">
-          <?php include 'includes/navbardash.php';?>
-      </div>
-      <div class="col-1"></div>
-  </div>
+if(!isset($_SESSION['empleado']))
+{
+    echo '<script language="javascript">alert("PRIMERO DEBE INICIAR SESIÓN");</script>';
+    echo '<script lenguage="javascript">window.location.replace("login.php");</script>';
+}
 
-  <div class="row">
-      
-      <div class="col-1"></div>
-      <div class="col-12 col-md-5 mt-3 text-center ">
-          <h2 class="p-1"><span class="iconify" data-icon="zmdi:assignment-return" data-width="50"></span>Reporte de devoluciones</h2>
-          <p>Visualice o descargué el reporte de devoluciones </p>
-      </div>
-      <div class="col-12 col-md-5 text-center p-2">
-      <iframe src="prueba.pdf" embedded="True" width="95%" height="500px" frameborder="0"></iframe>
-      </div>
-      <div class="col-1"></div>
-  </div>
-  <div class="row">
-      <div class="col-1"></div>
-      <div class="col-10">
-          <a href="reportes.php" class="btn btn-danger">Volver</a>
-          <?php include 'includes/footer.php';?>
-      </div>
-      <div class="col-1"></div>
-  </div>
+$consulta = "SELECT * FROM devolucion";
+$consultada = mysqli_query($conexion, $consulta);
+
+$resultados = mysqli_fetch_array($consultada);
+$numfilas = mysqli_num_rows($consultada);
+$i=0;
+$total=0;
+class PDF extends FPDF
+{
+// Cabecera de página
+function Header()
+{
+    // Logo
+    $this->Image('logo.png',10,8,33);
+    // Arial bold 15
+    $this->SetFont('Arial','B',18);
+    // Movernos a la derecha
+    date_default_timezone_set("America/Monterrey");
+    $fecha = date('Y-m-d   H:i:s');
+    $this->Cell(80);
+    // Título
+    $this->Cell(30,10,'Reporte de devoluciones Zapatapp',0,1,'C');
+    // Salto de línea
+    $this->Ln(20);
+    $this->Cell(180,-25,$fecha,0,1,'C');
+}
+
+// Pie de página
+function Footer()
+{
+    // Posición: a 1,5 cm del final
+    $this->SetY(-15);
+    // Arial italic 8
+    $this->SetFont('Arial','I',8);
+    // Número de página
+    $this->Cell(0,10,'Tortilleria Zapata. All Rights Reserved 2021.' ,0,0,'C');
+}
+}
+
+// Creación del objeto de la clase heredada
+$pdf = new PDF();
+$pdf->AliasNbPages();
+$pdf->AddPage();
+$pdf->SetFont('Times','',12);
+$pdf->SetY(50);
+$pdf->Cell(20,10,'Folio', 1,0,'C');
+$pdf->Cell(70,10,'Motivo devolucion', 1,0,'C');
+$pdf->Cell(50,10,'Fecha', 1,0,'C');
+$pdf->Cell(45,10,'Total devolucion', 1,0,'C');
+for($i=0;$i<=8;$i++)
+{
+    $pdf->Ln(20);
+    $pdf->Cell(20,20, $resultados[0], 1,0,'C');
+    $pdf->Cell(70,20, $resultados[2], 1,0,'C');
+    $pdf->Cell(50,20, $resultados[1], 1,0,'C');
+    $pdf->Cell(45,20, '$' . $resultados[3], 1,0,'C');
+
+    $total = $total + $resultados[3];
+
+    $resultados = mysqli_fetch_array($consultada);
+    /*if($i==8)
+    {
+        $pdf->Ln(100);
+        $lol;  
+    }
+    if($i==9 && isset($lol))
+    {
+        $pdf->Ln(50);
+    }*/
+}
+$pdf->Ln(50);
+$pdf->Cell(70,20, '', 0,0,'C');
+$pdf->Ln(10);
+for($i=0;$i<=$resultados;$i++)
+{
+    $pdf->Ln(20);
+    $pdf->Cell(20,20, $resultados[0], 1,0,'C');
+    $pdf->Cell(70,20, $resultados[2], 1,0,'C');
+    $pdf->Cell(50,20, $resultados[1], 1,0,'C');
+    $pdf->Cell(45,20, '$' . $resultados[3], 1,0,'C');
+
+    $total = $total + $resultados[3];
+
+    $resultados = mysqli_fetch_array($consultada);
+    /*if($i==8)
+    {
+        $pdf->Ln(100);
+        $lol;  
+    }
+    if($i==9 && isset($lol))
+    {
+        $pdf->Ln(50);
+    }*/
+}
+$pdf->Ln(20);
+$pdf->SetFont('Times','',20);
+$pdf->Cell(0,20, 'Total de devoluciones:$ ' . $total, 0,1,'C');
+
+$pdf->Output();
+ob_end_flush();
+?>

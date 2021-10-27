@@ -1,28 +1,24 @@
-:root{
-    --light: #ffffff;
-}
-
 body {
-
-    font-family: 'Muli', sans-serif !important;
-    font-weight: 300;
+  font-family: "Muli", sans-serif !important;
+  font-weight: 300;
+  text-decoration: none !important;
 }
 
-.bg-light { background-color: var(--light) !important; }    
-
-
-
-.items{
-    font-family: 'GFS Neohellenic', sans-serif;
-    font-size: 1.1rem;
-}
-.nombre-logo{
-    font-family: 'GFS Neohellenic', sans-serif;
-    font-size: 2rem;
+.bg-light {
+  background-color: #e2e2f2 !important;
 }
 
-.titulo{    
-    font-size: 1.3rem;
+.items {
+  font-family: "GFS Neohellenic", sans-serif;
+  font-size: 1.1rem;
+}
+.nombre-logo {
+  font-family: "GFS Neohellenic", sans-serif;
+  font-size: 2rem;
+}
+
+.titulo {
+  font-size: 1.3rem;
 }
 /*
 .nav-item:hover{
@@ -31,20 +27,19 @@ body {
 }*/
 
 @media (min-width: 992px) {
-    .carrusel-size{
-        height: 15vh;
-    }
-    .carrousel-img{
-        height: 15vh;
-    }
+  .carrusel-size {
+    height: 15vh;
+  }
+  .carrousel-img {
+    height: 15vh;
+  }
 }
 
-
 @media (min-width: 995px) {
-    .carrusel-size{
-        height: 75vh;
-    }
-    .carrousel-img{
-        height: 75vh;
-    }
+  .carrusel-size {
+    height: 75vh;
+  }
+  .carrousel-img {
+    height: 75vh;
+  }
 }

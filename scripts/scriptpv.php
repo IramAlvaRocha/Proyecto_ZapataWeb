@@ -43,7 +43,7 @@ if(isset($_GET['prod']) || isset($_SESSION['sumaprecio']))
         {
             $preciototalfinal = $preciototalfinal + $value[2];  
             $_SESSION['sumaprecio'] = $preciototalfinal;
-           // echo "<br>" . "Sumaprecio: " . $_SESSION['sumaprecio']; Testei del precio
+            // echo "<br>" . "Sumaprecio: " . $_SESSION['sumaprecio']; Usado para verificar que se restara correctamente todo.
         }
     }
 

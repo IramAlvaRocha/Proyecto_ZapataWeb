@@ -23,7 +23,8 @@ $ifadmin=$registrodatos['admin_Empleado'];
     {
         echo '<div class="alert alert-success" role="alert"> A simple success alert—check it out! </div>';
         if($ifadmin==="Si"){
-            echo '<script lenguage="javascript">window.location.replace("../dashboard.php?user=' . $nombre . '");</script>';  
+            echo '<script lenguage="javascript">window.location.replace("../dashboard.php?user=' . $nombre . '");</script>'; 
+            $_SESSION['empleado'] = $nombre; 
         }else{
             $_SESSION['empleado'] = $nombre;
             $_SESSION['nombreemp'] = $registrodatos['nombre_Empleado'];
