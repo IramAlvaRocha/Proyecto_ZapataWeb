@@ -73,10 +73,6 @@ a {
   max-width: 35px;
 }
 
-.btn-search {
-  right: 0;
-}
-
 .stat {
   border-right: 1px solid var(--grey);
 }

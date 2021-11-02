@@ -5,12 +5,12 @@
 <?php include 'includes/header.php'?>
 <?php include 'includes/navbar.php'?>
 
-<div class="row text-center d-flex align-items-center rounded" >
+<div class="row text-center d-flex align-items-center rounded vh-50" >
 <div class="col-12 col-md-12 col-lg-6 shadow align-self-center" style="background-color: rgba(0, 0, 0, 0.04);">
     <div class="row text-center">
          <div class="col-12 col-md-12 col-lg-12 text-center">
              <h2 class="section-heading text-center h1 pt-4 text-success" >Ubicanos <span class="iconify" data-icon="carbon:map" data-width="50" data-height="50"></span></h2>
-          <p class=" fs-5 section-description monospace pb-4 text-center">Ven a conocer nuestras instalaciones, manda un correo electronico o llamanos!</p>
+          <p class=" fs-6 section-description monospace pb-4 text-center">Ven a conocer nuestras instalaciones, manda un correo electronico o llamanos!</p>
          </div>
     </div>
     <div class="row text-center rounded">

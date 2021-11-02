@@ -9,7 +9,7 @@
  	if($resultado){
  		echo '<script lenguage="javascript">window.history.back();</script>'; 
  	}else{
- 		echo 'alert("Error en la transacción, volver a intentar.")';
+ 		echo '<script>aler0t("Error en la transacción, volver a intentar.")</script>';
  		echo '<script lenguage="javascript">window.history.back();</script>'; 
  	}
 ?>

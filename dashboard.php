@@ -28,7 +28,8 @@
             <a href="" id="btn-gastos" class="d-block text-light p-3 menu-opc"><span class="iconify mr-2 lead" data-icon="mdi:cash" data-width="36" data-height="36"></span> Gestion gastos</a>
             <a href="" id="btn-productos" class="d-block text-light p-3 menu-opc"><span class="iconify mr-2 lead" data-icon="mdi:basket-plus" data-width="36" data-height="36"></span> Gestion producto</a>
             <a href="" id="btn-ventas" class="d-block text-light p-3 menu-opc"><span class="iconify mr-2 lead" data-icon="mdi:point-of-sale" data-width="36" data-height="36"></span> Historial de ventas</a>
-            <a href="" id="btn-notas" class="d-block text-light p-3 menu-opc"> <span class="iconify" data-icon="mdi:inbox-arrow-up-outline" data-width="36" data-height="36"></span></span> Notas para empleados</a>
+            <a href="" id="btn-proveedores" class="d-block text-light p-3 menu-opc"> <span class="iconify" data-icon="fluent:book-contacts-28-filled" data-width="36"></span> Proveedores</a>
+            <a href="" id="btn-notas" class="d-block text-light p-3 menu-opc"> <span class="iconify" data-icon="mdi:inbox-arrow-up-outline" data-width="36" data-height="36"></span> Notas para empleados</a>
         </div>
     </div>
 
@@ -47,7 +48,9 @@
               <p class="fs-3">Revisa la última información</p>
             </div>
             <div class="col-lg-3">
-              <a href="reportes.php" class="btn btn-primary w-100 align-self-center">Descargar reportes</a>
+              <a href="reportes.php" class="m-2  btn btn-primary w-100 align-self-center">Descargar reportes</a>
+              <br>
+              <a href="https://github.com/IramAlvaRocha/Proyecto_ZapataWeb/archive/refs/heads/master.zip" class="m-2 btn btn-primary w-100 align-self-center">Archivos fuentes</a>
             </div>
           </div>
         </div>
@@ -119,10 +122,11 @@
           </div>
         </div>
       </section>
+      
     </div>
 
     </div>
-</div>
+ </div>
 
           </div>
             </div>

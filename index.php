@@ -4,7 +4,7 @@
 <!-- <div class="row mb-2">
   <div class="col-1 col-lg-2"></div>
   <div class="col- col-lg-8">
-    <h4 class="text-center text-justify p-2">Bienvenidos Tortilleria Zapata, empresa con 12 años de experiencia en la industria de la tortilla de maiz.</h1>
+    <h4 class="text-center text-justify p-2">Bienvenidos Tortilleria Zapata, empresa con 12 años de experiencia en la industria de la tortilla de maiz.</h1>   
     <h6 class="text-muted text-center text-justify mb-2">Le invitamos a conocer cada una de nuestras secciones, para conocer más de nosotros y nuestros productos, realizados con la Máxima Calidad que nos distingue.</h6>
   </div>
   <div class="col-1 col-lg-2"></div>

@@ -8,6 +8,14 @@ $(document).ready(function () {
     });
   });
 
+  $("#btn-proveedores").click(function (event) {
+    event.preventDefault();
+    $("#content").children().empty();
+    $.ajax("proveedores.php").done(function (response) {
+      $("#content").html(response);
+    });
+  });
+
   $("#btn-notas").click(function (event) {
     event.preventDefault();
     $("#content").children().empty();
