@@ -2,8 +2,8 @@
 	include("conexion.php");
 	$conexion=conectar();
 
-	$folioEmp=$_GET['user'];
-	 $consulta=("DELETE FROM empleado WHERE folio_Empleado='$folioEmp';");
+	$IDprov=$_GET['idprov'];
+	 $consulta=("DELETE FROM proveedor WHERE ID_proveedor='$IDprov';");
  	$resultado= mysqli_query($conexion, $consulta);
 
  	if($resultado){

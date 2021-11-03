@@ -1,44 +1,38 @@
 <?php include 'scripts/scriptpv.php'?>
 <?php include 'includes/header.php' ?>
-<?php include 'includes/navbar.php' ?>
 
-<div class=" container text-center">
+<div class=" container-fluid text-center p-3 align-items-center">
         <div class="row mt-2">
-            <div class="col-12">
-                <h1><span class="iconify" data-icon="mdi:point-of-sale" data-width="75"></span>PUNTO DE VENTA</h1>
+            <div class="col-12 col-lg-4">
+                <h2><span class="iconify" data-icon="mdi:point-of-sale" data-width="65"></span>Área de ventas</h2>
             </div>
-        </div>
-    </div>
-
-    <div class="container border">
-        <div class="row p-2 shadow rounded">
-            <div class="col-6 text-center">
-                <?php
+            <div class="col-12 col-lg-8 d-flex align-items-center justify-content-around">
+                   <?php
                 $nombreEmp = $_SESSION['nombreemp'];  
-                echo "<h4><span class='iconify' data-icon='clarity:employee-solid' data-width='35'></span>Empleado: $nombreEmp</h4>" ?>
-            </div>
-            <div class="col-6 text-center">
-            <?php
-             $folioemp = $_SESSION['empleado'];
-             echo "<h4><span class='iconify' data-icon='fa-solid:id-badge' data-width='25'></span>Folio: $folioemp </h4>" ?>
-            </div>
+                echo "<h5>Empleado: $nombreEmp</h5>" ;
+                echo " <h5> Fecha: ". date('n / j / Y')." </h5>";
+                ?>
+                <a class="btn btn-danger" href="index.php">Salir</a>
+                <?php include ("scripts/newmail.php"); ?>
+           </div>
         </div>
     </div>
 
 
     <div class=" container mt-5 mb-2 col-12">
+    
         <div class="row">
-            <div class="col-12 col-md-12 col-lg-6 text-center">
-            <form class="d-flex ">
-              <label class="p-2 align-content-center" for=""><b>Código de producto</b></label>
-                <input class="form-control me-2" type="text" id="busqueda" name="busqueda" placeholder="Buscar producto" aria-label="Search">
-                <button class="btn btn-success" type="submit">Buscar</button>
+            <div class="col-12 col-md-12 col-lg-8 text-center">
+            <form class="d-flex flex-row justify-content-space-evenly">
+              <!-- <label class="align-content-center" for=""><b>Código de producto</b></label> -->
+                <input class="form-control me-2" type="text" id="busqueda" name="busqueda" placeholder="Ingrese el código del producto a buscar" aria-label="Search">
             </form>
-                 <div class=" text-center text-success" name="ResultDiv" id="ResultDiv" >
+                 <div class=" text-center text-success d-flex flex-column w-80 border border-2 rounded" name="ResultDiv" id="ResultDiv" >
             </div>
         </div>
-        <div class="col-lg-6 text-center justify-content-center align-content-evenly">
-            <p class=""><?php include 'scripts/preciototal.php';?></p>
+        <div class="col-lg-4 text-center justify-content-center align-content-evenly">
+            <p class=""><?php include 'scripts/preciototal.php';?></p> 
+            
         </div>
     </div>
     <br><br><br>
@@ -61,20 +55,28 @@
 
         </div>
 
-        <div class="row shadow p-3">
-                <div class="col-12 col-lg-6 d-flex">
-                    <span class="input-group-text" id="inputGroup-sizing-default">Pago del Cliente $:</span>
-                    <input type="text" name="total" id="total" class="form-control" placeholder="Ingrese el pago del cliente" required>
+        <div class="row shadow d-flex flex-row align-items-center p-3">
+                <div class="col-12 col-lg-6 d-flex flex-row justify-conten-evenly">
+                    <p class="input-group-text" id="inputGroup-sizing-default">Pago:</span> 
+                    &nbsp;
+                    <input type="text" name="total" id="total" class="form-control" placeholder="Ingrese el pago  " required>
+                    &nbsp;&nbsp;&nbsp;&nbsp;
                 </div>
-                <div class="col-12 col-lg-6 text-center">
+                <div class="col-12 col-lg-3">
                     <button  form="formventa" type="submit" class="btn btn-success">
                         Terminar Venta
                     </button>
                 </div>
             </form>
-            <div class="col-12 col-lg-6 text-center mt-3">
+            <div class="col-12 col-lg-3">
             <a href="scripts/cancelarventa.php"><button name="" class="btn btn-danger">
                 Cancelar Venta
+            </button></a>
+            </div>
+        </div>
+            </button></a>
+            </div>
+        </div>
             </button></a>
             </div>
         </div>

@@ -1,17 +1,16 @@
 <?php include ('includes/header.php') ?>
 <?php include ('includes/navbar.php') ?>
 
-<div class="row mb-2">
+<!-- <div class="row mb-2">
   <div class="col-1 col-lg-2"></div>
   <div class="col- col-lg-8">
-    <h4 class="text-center text-justify p-2">Bienvenidos Tortilleria Zapata, empresa con 12 años de experiencia en la industria de la tortilla de maiz.</h1>
+    <h4 class="text-center text-justify p-2">Bienvenidos Tortilleria Zapata, empresa con 12 años de experiencia en la industria de la tortilla de maiz.</h1>   
     <h6 class="text-muted text-center text-justify mb-2">Le invitamos a conocer cada una de nuestras secciones, para conocer más de nosotros y nuestros productos, realizados con la Máxima Calidad que nos distingue.</h6>
   </div>
   <div class="col-1 col-lg-2"></div>
 </div>
-<div c
-lass="row">   
-    <div class="col-12">
+<div class="row">   
+    <div class="col-12 h-80">
     <div id="carouselExampleCaptions" class="carousel slide carrusel-size" data-bs-ride="carousel">
   <div class="carousel-indicators">
     <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -51,6 +50,21 @@ lass="row">
   </button>
 </div>
     </div>
-</div>
+</div> -->
 
+<div class="row d-flex flex-row h-75 d-inline-block align-items-center">
+  <div id="hero-image" class="col-lg-6 col-md-6 col-12">
+    <h2 class="text-center text-justify p-2">Bienvenidos Tortilleria Zapata, empresa con 12 años de experiencia en la industria de la tortilla de maiz.</h2>
+    <br>
+     <h6 class="text-center text-success fs-5 text-justify mb-2">Le invitamos a conocer cada una de nuestras secciones, para conocer más acerca de nosotros y los productos con los que contamos, realizados con la máxima calidad que nos distingue.</h6>
+  </div>
+  <div class="col-lg-6 col-md-6 col-12 text-center">
+       <img class="rounded" src="img/tortillas_home.png" width="90%" height="400px" alt="">
+  </div>
+</div>
+<div class="row">
+  <div class="col-lg-12">
+
+  </div>
+</div>
 <?php include ('includes/footer.php') ?>

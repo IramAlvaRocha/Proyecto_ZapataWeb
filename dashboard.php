@@ -22,12 +22,14 @@
         <div class="logo">
             <h4 class="text-light fw-bold"><a class="text-white" href="dashboard.php">Área de administración</a></h4>
         </div>
-        <div class="menu">
-            <a href="" id="btn-empleado" class="d-block text-light p-3 menu-opc"> <span class="iconify mr-2 lead" data-icon="mdi:account-box"></span> Gestion de empleados</a>
-            <a href="" id="btn-devoluciones" class="d-block text-light p-3 menu-opc"><span class="iconify mr-2 lead" data-icon="mdi:clipboard-arrow-left"></span> Gestion devoluciones</a>
-            <a href="" id="btn-gastos" class="d-block text-light p-3 menu-opc"><span class="iconify mr-2 lead" data-icon="mdi:cash"></span> Gestion gastos</a>
-            <a href="" id="btn-productos" class="d-block text-light p-3 menu-opc"><span class="iconify mr-2 lead" data-icon="mdi:basket-plus"></span> Gestion producto</a>
-            <a href="" id="btn-ventas" class="d-block text-light p-3 menu-opc"><span class="iconify mr-2 lead" data-icon="mdi:point-of-sale"></span> Historial de ventas</a>
+        <div class="menu" >
+            <a href="" id="btn-empleado" class="d-block text-light p-3 menu-opc"> <span class="iconify mr-2 lead" data-icon="mdi:account-box" data-width="36" data-height="36"></span> Gestion de empleados</a>
+            <a href="" id="btn-devoluciones" class="d-block text-light p-3 menu-opc"><span class="iconify mr-2 lead" data-icon="mdi:clipboard-arrow-left" data-width="36" data-height="36"></span> Gestion devoluciones</a>
+            <a href="" id="btn-gastos" class="d-block text-light p-3 menu-opc"><span class="iconify mr-2 lead" data-icon="mdi:cash" data-width="36" data-height="36"></span> Gestion gastos</a>
+            <a href="" id="btn-productos" class="d-block text-light p-3 menu-opc"><span class="iconify mr-2 lead" data-icon="mdi:basket-plus" data-width="36" data-height="36"></span> Gestion producto</a>
+            <a href="" id="btn-ventas" class="d-block text-light p-3 menu-opc"><span class="iconify mr-2 lead" data-icon="mdi:point-of-sale" data-width="36" data-height="36"></span> Historial de ventas</a>
+            <a href="" id="btn-proveedores" class="d-block text-light p-3 menu-opc"> <span class="iconify" data-icon="fluent:book-contacts-28-filled" data-width="36"></span> Proveedores</a>
+            <a href="" id="btn-notas" class="d-block text-light p-3 menu-opc"> <span class="iconify" data-icon="mdi:inbox-arrow-up-outline" data-width="36" data-height="36"></span> Notas para empleados</a>
         </div>
     </div>
 
@@ -43,10 +45,12 @@
           <div class="row">
             <div class="col-lg-9">
               <h1 class="fw-bold mb-0">Bienvenido Iram Alvarez</h1>
-              <p class="text-muted">Revisa la última información</p>
+              <p class="fs-3">Revisa la última información</p>
             </div>
             <div class="col-lg-3">
-              <a href="reportes.php" class="btn btn-primary w-100 align-self-center">Descargar reportes</a>
+              <a href="reportes.php" class="m-2  btn btn-primary w-100 align-self-center">Descargar reportes</a>
+              <br>
+              <a href="https://github.com/IramAlvaRocha/Proyecto_ZapataWeb/archive/refs/heads/master.zip" class="m-2 btn btn-primary w-100 align-self-center">Archivos fuentes</a>
             </div>
           </div>
         </div>
@@ -114,6 +118,17 @@
                 </div>
                 </div>
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+    </div>
+
+    </div>
+ </div>
+
+          </div>
             </div>
           </div>
         </div>

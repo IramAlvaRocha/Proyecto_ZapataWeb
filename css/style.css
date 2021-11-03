@@ -1,41 +1,33 @@
-:root {
-  --light: #ffffff;
-}
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
 
 body {
-  font-family: "Muli", sans-serif !important;
+  font-family: "Poppins", sans-serif !important;
   font-weight: 300;
+  text-decoration: none !important;
 }
 
 .bg-light {
-  background-color: var(--light) !important;
-}
-
-#ResultDiv {
-  display: flex;
-  color: black;
-  width: 50px;
-  justify-content: center;
-  align-content: center;
+  background-color: #e2e2f2 !important;
 }
 
 .items {
-  font-family: "GFS Neohellenic", sans-serif;
+  font-family: "Poppins", sans-serif;
   font-size: 1.1rem;
 }
 .nombre-logo {
-  font-family: "GFS Neohellenic", sans-serif;
+  font-family: "Poppins", sans-serif;
   font-size: 2rem;
 }
 
 .titulo {
   font-size: 1.3rem;
 }
-/*
-.nav-item:hover{
-    background-color: rgba(90, 88, 24, 0.5);
-    border-radius: 10%;
-}*/
+
+.nav-item:hover {
+  background-color: rgba(90, 88, 24, 0.5);
+  border-radius: 10%;
+  color: green;
+}
 
 @media (min-width: 992px) {
   .carrusel-size {
