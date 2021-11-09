@@ -10,9 +10,10 @@
 	$adminEmp=$_POST['admin'];
 	$nacEmp=$_POST['nacimiento'];
 	$folioEmp=$_POST['folio'];
+	$sucursal=$_POST['sucursal'];
 	$nomFullEmp= $nombreEmp . ' ' . $apellidoEmp;
 
-	$consulta=("INSERT INTO `empleado` (`folio_Empleado`,`nombre_Empleado`,`fecha_nac_Empleado`,`correo_Empleado`,`contra`,`direccion_Empleado`,`admin_Empleado`) VALUES ('$folioEmp','$nomFullEmp','$nacEmp','$correoEmp','$contrasenaEmp','$direccionEmp','$adminEmp');");
+	$consulta=("INSERT INTO `empleado` (`folio_Empleado`,`nombre_Empleado`,`fecha_nac_Empleado`,`correo_Empleado`,`contra`,`direccion_Empleado`,`admin_Empleado`,`sucursal_empleado`) VALUES ('$folioEmp','$nomFullEmp','$nacEmp','$correoEmp','$contrasenaEmp','$direccionEmp','$adminEmp','$sucursal');");
  	$resultado= mysqli_query($conexion, $consulta);
 
  	if($resultado){

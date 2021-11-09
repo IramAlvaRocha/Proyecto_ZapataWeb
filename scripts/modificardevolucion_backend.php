@@ -7,8 +7,9 @@
 	$fecha=$_POST['fecha'];
 	$monto=$_POST['monto'];
 	$perdida=$_POST['perdida'];
+	$sucursal=$_POST['sucursal'];
 
-	$consulta=("UPDATE `devolucion` SET `fecha_Devolucion`='$fecha',`motivo_Devolucion`='$motivo',`monto_Devolucion`='$monto',`perdida_Devolucion`='$perdida'  WHERE `id_Devolucion`='$foliodev';");
+	$consulta=("UPDATE `devolucion` SET `fecha_Devolucion`='$fecha',`motivo_Devolucion`='$motivo',`monto_Devolucion`='$monto',`perdida_Devolucion`='$perdida',`sucursal_Devolucion`='$sucursal'  WHERE `id_Devolucion`='$foliodev';");
  	$resultado= mysqli_query($conexion, $consulta);
 
  	if($resultado){

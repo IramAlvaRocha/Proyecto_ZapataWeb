@@ -45,8 +45,15 @@
                 <label class="form-label">Sucursal</label>
                 <select class="form-select" name="sucursal" id="sucursal" required>
                   <option selected>Selecciona una sucursal</option>
-                  <option value="Si">Sí</option>
-                  <option value="No">No</option>
+                  <?php
+                    include("scripts/conexion.php");
+                    $conexion=conectar();
+                    $consulta1="SELECT * FROM sucursal;";
+                    $resultado1=mysqli_query($conexion,$consulta1);
+                    while($lista1=mysqli_fetch_array($resultado1, MYSQLI_ASSOC)){
+                        echo '<option value="' . $lista1['nombre_sucursal'] . '">' . $lista1['nombre_sucursal'] . '</option>';
+                    }
+                  ?>
                 </select>
               </div>
               <br><br>
@@ -59,8 +66,6 @@
     </div>
 
     <?php
-      include("scripts/conexion.php");
-      $conexion=conectar();
 
       $consulta="SELECT * FROM empleado;";
       $resultado=mysqli_query($conexion,$consulta);
@@ -77,6 +82,7 @@
                         <th scope="col">Nombre(s)</th>
                         <th scope="col">Correo Electronico</th>
                         <th scope="col">Rol</th>
+                        <th scope="col">Sucursal</th>
                         <th scope="col">Gestión</th>
                         </tr>
                     </thead>
@@ -91,6 +97,7 @@
                         echo '<td>' . $lista['nombre_Empleado'] . '</td>';
                         echo '<td>' . $lista['correo_Empleado'] . '</td>';
                         echo '<td>' . $lista['admin_Empleado'] . '</td>';
+                        echo '<td>' . $lista['sucursal_empleado'] . '</td>';
                         echo '<td>
                           <a href="modificarempleados.php?user=' . $lista["folio_Empleado"] . '" class="btn btn-outline-warning"><span class="iconify" data-icon="clarity:note-edit-solid" data-width="15"></span></a>  
                           <a href="scripts/eliminarempleados.php?user=' . $lista["folio_Empleado"] . '" class="btn btn-outline-danger"><span class="iconify" data-icon="ant-design:delete-filled" data-width="15"></span></a> 

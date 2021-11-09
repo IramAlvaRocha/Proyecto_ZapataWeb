@@ -9,8 +9,9 @@
 	$adminEmp=$_POST['admin'];
 	$nacEmp=$_POST['nacimiento'];
 	$folioEmp=$_POST['folio'];
+	$sucursal=$_POST['sucursal'];
 
-	$consulta=("UPDATE `empleado` SET `nombre_Empleado`='$nombreEmp', `fecha_nac_Empleado`='$nacEmp', `correo_Empleado`='$correoEmp', `contra`='$contrasenaEmp', `direccion_Empleado`='$direccionEmp', `admin_Empleado`='$adminEmp' WHERE `folio_Empleado`='$folioEmp';");
+	$consulta=("UPDATE `empleado` SET `nombre_Empleado`='$nombreEmp', `fecha_nac_Empleado`='$nacEmp', `correo_Empleado`='$correoEmp', `contra`='$contrasenaEmp', `direccion_Empleado`='$direccionEmp', `admin_Empleado`='$adminEmp', `sucursal_empleado`='$sucursal' WHERE `folio_Empleado`='$folioEmp';");
  	$resultado= mysqli_query($conexion, $consulta);
 
  	if($resultado){

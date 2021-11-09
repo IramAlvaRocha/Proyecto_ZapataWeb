@@ -6,8 +6,9 @@
 	$monto=$_POST['monto'];
 	$fecha=$_POST['fecha'];
 	$descripcion=$_POST['descripcion'];
+	$sucursal=$_POST['sucursal'];
 
-	$consulta=("UPDATE `gasto` SET `descripcion_gasto`='$descripcion',`monto_gasto`='$monto',`fecha_gasto`='$fecha'  WHERE `idGasto`='$foliogasto';");
+	$consulta=("UPDATE `gasto` SET `descripcion_gasto`='$descripcion',`monto_gasto`='$monto',`fecha_gasto`='$fecha',`sucursal_gasto`='$sucursal'  WHERE `idGasto`='$foliogasto';");
  	$resultado= mysqli_query($conexion, $consulta);
 
  	if($resultado){

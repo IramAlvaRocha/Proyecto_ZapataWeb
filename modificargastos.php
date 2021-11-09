@@ -64,6 +64,19 @@ include("scripts/seguridad_nav.php");
             <label  class="form-label">Descripción</label>
             <input type="text" class="form-control" name="descripcion" placeholder="Descripción del gasto" required value="<?php echo $lista['descripcion_gasto']?>">
           </div>
+          <div class="col-12 col-md-12 col-lg-6">
+                <label class="form-label">Sucursal</label>
+                <select class="form-select" name="sucursal" id="sucursal" required>
+                  <option selected><?php echo $lista['sucursal_gasto']?></option>
+                  <?php
+                    $consulta1="SELECT * FROM sucursal;";
+                    $resultado1=mysqli_query($conexion,$consulta1);
+                    while($lista1=mysqli_fetch_array($resultado1, MYSQLI_ASSOC)){
+                        echo '<option value="' . $lista1['nombre_sucursal'] . '">' . $lista1['nombre_sucursal'] . '</option>';
+                    }
+                  ?>
+                </select>
+              </div>
               <div class="col-6 col-md-6 col-lg-3 mt-5 text-center">
                 <input type="submit" class="btn btn-success" value="Modificar datos">
               </div>

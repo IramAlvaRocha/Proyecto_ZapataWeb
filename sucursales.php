@@ -3,7 +3,7 @@
 <div class="row mt-3" id="form-sign">
         <div class="col-1"></div>
         <div class="col-10 p-3 border rounded shadow p-4 mb-5">
-          <form class="row g-3" action="scripts/empleados_backend.php" method="post">
+          <form class="row g-3" action="scripts/sucursales_backend.php" method="post">
           <span class="border fs-3 border border-primary text-center">Sucursales</span>
               <div class="col-12 col-lg-6">
                 <label  class="form-label">Nombre</label>
@@ -19,7 +19,18 @@
               </div>
               <div class="col-12 col-md-12 col-lg-6">
                 <label  class="form-label">Zona</label>
-                <input type="text" class="form-control" name="direccion" id="direccion" placeholder="Ciudad, Estado, País" required>
+                <select class="form-select" name="zona" id="admin" required>
+                  <option selected>Selecciona una zona:</option>
+                  <?php
+                    include("scripts/conexion.php");
+                    $conexion=conectar();
+                    $consulta1="SELECT * FROM zona;";
+                    $resultado1=mysqli_query($conexion,$consulta1);
+                    while($lista1=mysqli_fetch_array($resultado1, MYSQLI_ASSOC)){
+                        echo '<option value="' . $lista1['nombre_zona'] . '">' . $lista1['nombre_zona'] . '</option>';
+                    }
+                  ?>
+                </select>
               </div>
               <div class="col-12 col-md-12 col-lg-12 mt-5 text-center">
                 <input type="submit" class="btn btn-success" value="Registrar sucursal">
@@ -30,10 +41,9 @@
     </div>
 
     <?php
-      include("scripts/conexion.php");
-      $conexion=conectar();
+      
 
-      $consulta="SELECT * FROM empleado;";
+      $consulta="SELECT * FROM sucursal;";
       $resultado=mysqli_query($conexion,$consulta);
       
     ?>
@@ -58,14 +68,16 @@
                       while($lista=mysqli_fetch_array($resultado, MYSQLI_ASSOC)){
                         $contador++;
                         echo '<tr>';
-                        echo '<th scope="row">' . $lista['folio_Empleado'] . '</th>';
-                        echo '<td>' . $lista['nombre_Empleado'] . '</td>';
-                        echo '<td>' . $lista['correo_Empleado'] . '</td>';
-                        echo '<td>' . $lista['admin_Empleado'] . '</td>';
-                        echo '<td>
-                          <a href="modificarempleados.php?user=' . $lista["folio_Empleado"] . '" class="btn btn-outline-warning"><span class="iconify" data-icon="clarity:note-edit-solid" data-width="15"></span></a>  
-                          <a href="scripts/eliminarempleados.php?user=' . $lista["folio_Empleado"] . '" class="btn btn-outline-danger"><span class="iconify" data-icon="ant-design:delete-filled" data-width="15"></span></a> 
-                        </td></tr>
+                        echo '<th scope="row">' . $contador . '</th>';
+                        echo '<td>' . $lista['nombre_sucursal'] . '</td>';
+                        echo '<td>' . $lista['encargado_sucursal'] . '</td>';
+                        echo '<td>' . $lista['zona_sucursal'] . '</td>';
+                        echo '<td>' . $lista['telefono_sucursal'] . '</td>';
+                        //echo '<td>
+                          //<a href="modificarempleados.php?user=' . $lista["folio_Empleado"] . '" class="btn btn-outline-warning"><span class="iconify" data-icon="clarity:note-edit-solid" data-width="15"></span></a>  
+                          //<a href="scripts/eliminarempleados.php?user=' . $lista["folio_Empleado"] . '" class="btn btn-outline-danger"><span class="iconify" data-icon="ant-design:delete-filled" data-width="15"></span></a> 
+                        //</td>
+                        echo '</tr>
                     </tbody>';
                       }
                     ?>

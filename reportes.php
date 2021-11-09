@@ -94,12 +94,32 @@
           <h1 class="text-center">Reportes </h1>
         </div>
         <br><br>
+        <form class="row g-3" method="post" action="reportes_backend.php">
         <div class="col-12 col-md-12 col-lg-6">
-                <label class="form-label">Sucursal</label>
-                <select class="form-select" name="zona" id="zona" required>
+                <label class="form-label">Tipo de Reporte</label>
+                <select class="form-select" name="tipo" id="zona" required>
+                  <option selected>Selecciona tipo de reporte</option>
+                  <option value="Ventas">Ventas</option>
+                  <option value="Empleados">Empleados</option>
+                  <option value="Productos">Productos</option>
+                  <option value="Gastos">Gastos</option>
+                  <option value="Devoluciones">Devoluciones</option>
+                </select>
+              </div>
+              <br><br>
+              <div class="col-12 col-md-12 col-lg-6">
+                <label class="form-label">Zona:</label>
+                <select class="form-select" name="zona" id="sucursal" required>
                   <option selected>Selecciona una zona</option>
-                  <option value="Si">Sí</option>
-                  <option value="No">No</option>
+                  <?php
+                    include("scripts/conexion.php");
+                    $conexion=conectar();
+                    $consulta2="SELECT * FROM zona;";
+                    $resultado2=mysqli_query($conexion,$consulta2);
+                    while($lista2=mysqli_fetch_array($resultado2, MYSQLI_ASSOC)){
+                        echo '<option value="' . $lista2['nombre_zona'] . '">' . $lista2['nombre_zona'] . '</option>';
+                    }
+                  ?>
                 </select>
               </div>
               <br><br>
@@ -107,12 +127,21 @@
                 <label class="form-label">Sucursal</label>
                 <select class="form-select" name="sucursal" id="sucursal" required>
                   <option selected>Selecciona una sucursal</option>
-                  <option value="Si">Sí</option>
-                  <option value="No">No</option>
+                  <?php
+                    $consulta1="SELECT * FROM sucursal;";
+                    $resultado1=mysqli_query($conexion,$consulta1);
+                    while($lista1=mysqli_fetch_array($resultado1, MYSQLI_ASSOC)){
+                        echo '<option value="' . $lista1['nombre_sucursal'] . '">' . $lista1['nombre_sucursal'] . '</option>';
+                    }
+                  ?>
                 </select>
               </div>
               <br><br>
-              <button class="btn btn-success" value="Ver reporte">Ver reporte</button>
+              
+              <div class="col-md-12 mt-5 text-center">
+                <input type="submit" class="btn btn-success" value="Ver reporte">
+              </div>
+                  </form>
       </div>
 </body>
 </html>
