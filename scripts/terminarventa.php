@@ -6,7 +6,7 @@ date_default_timezone_set("America/Monterrey");
 $fecha = date('Y-m-d');
 $total = $_SESSION['sumaprecio']; //Sacamos el total de la venta
 $folioemp = $_SESSION['empleado']; //Sacamos el folio del empleado
-$pago = $_POST['total']; //Sacamos con cuanto pagó el cliente.
+$pago = $_GET['total']; //Sacamos con cuanto pagó el cliente.
 
 $feria = $pago-$total;
 $ferianet= $feria*-1;

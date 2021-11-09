@@ -18,5 +18,5 @@ if(isset($_SESSION['compras']))
                     
                 }
              }
-             else echo "<h4>Total $: <label for='formGroupExampleInput' class='form-label'>0</label></h4>";
+             else echo "<h4><label for='formGroupExampleInput' class='form-label'>No hay productos en el carrito de compras :(</label></h4>";
 ?>             

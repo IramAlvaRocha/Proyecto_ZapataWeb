@@ -32,32 +32,7 @@
     </tr>
   </thead>
   <?php include("scripts/mensajesuser.php"); ?>
-  <!--<tbody>
-    <tr >
-      <th scope="row">Iram Alvarez Rocha</th>
-      <td>06/10/2021</td>
-      <td>La concha de su madre las tortillas</td>
-      <td class="d-flex d-column"><a class="btn btn-danger" href="">X</a></td>
-    </tr>
-        <tr >
-      <th scope="row">Iram Alvarez Rocha</th>
-      <td>06/10/2021</td>
-      <td>La concha de su madre las tortillas</td>
-      <td class="d-flex d-column"><a class="btn btn-danger" href="">X</a></td>
-    </tr>
-        <tr >
-      <th scope="row">Iram Alvarez Rocha</th>
-      <td>06/10/2021</td>
-      <td>La concha de su madre las tortillas</td>
-      <td class="d-flex d-column"><a class="btn btn-danger" href="">X</a></td>
-    </tr>
-        <tr >
-      <th scope="row">Iram Alvarez Rocha</th>
-      <td>06/10/2021</td>
-      <td>La concha de su madre las tortillas</td>
-      <td class="d-flex d-column"><a class="btn btn-danger" href="">X</a></td>
-    </tr>
-  </tbody>-->
+
 </table>
 </div>
 </div>

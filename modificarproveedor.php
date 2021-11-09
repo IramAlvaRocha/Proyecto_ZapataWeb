@@ -35,9 +35,9 @@ include("scripts/seguridad_nav.php");
   include("scripts/conexion.php");
   $conexion=conectar();
 
-  $folioEmp=$_GET['user'];
+  $IDprov=$_GET['idprov'];
 
-  $consulta="SELECT * FROM empleado WHERE folio_Empleado='$folioEmp';";
+  $consulta="SELECT * FROM proveedor WHERE ID_proveedor='$IDprov';";
   $resultado=mysqli_query($conexion,$consulta);
   $lista=mysqli_fetch_array($resultado, MYSQLI_ASSOC);
 ?>
@@ -45,41 +45,32 @@ include("scripts/seguridad_nav.php");
 <div class="row mt-3" id="form-sign">
         <div class="col-1"></div>
         <div class="col-10 p-3 border rounded shadow p-4 mb-5">
-          <form class="row g-3" action="scripts/modificarempleado_backend.php" method="post">
+          <form class="row g-3" action="scripts/modificarproveedor_backend.php" method="post">
           <span class="border fs-3 border border-primary text-center">Modificar datos de empleado</span>
           <div class=" col-12 col-md-12 col-lg-6">
-              <label class="form-label">Folio de registro de empleado</label>
-                <input type="text" class="form-control" name="folio" id="nombre" required value="<?php echo $lista['folio_Empleado']?>" readonly="">
+              <label class="form-label">Folio de proveedor:</label>
+                <input type="text" class="form-control" name="ID_proveedor" id="ID_proveedor" required value="<?php echo $lista['ID_proveedor']?>" readonly="">
               </div>
               <div class="col-12 col-lg-6">
-                <label  class="form-label">Nombre</label>
-                <input type="text" class="form-control" name="nombre" id="nombre" placeholder="Nombre completo" required value="<?php echo $lista['nombre_Empleado']?>">
+                <label  class="form-label">Nombre:</label>
+                <input type="text" class="form-control" name="nombre_proveedor" id="nombre" placeholder="Nombre completo" required value="<?php echo $lista['nombre_proveedor']?>">
+              </div>
+              <div class="col-12 col-md-12 col-lg-6"> 
+            <label  class="form-label">Télefono:</label>
+            <input type="text" class="form-control" name="telefono_proveedor" placeholder="Telefono del proveedor" required value="<?php echo $lista['telefono_proveedor']?>">
+            </div>
+              <div class="col-12 col-md-12 col-lg-6">
+                <label  class="form-label">Dirección:</label>
+                <input type="text" class="form-control" name="direccion_proveedor" id="direccion" placeholder="Ciudad, Estado, País" required value="<?php echo $lista['direccion_proveedor']?>">
               </div>
               <div class="col-12 col-md-12 col-lg-6">
-                <label  class="form-label">Correo Electronico</label>
-                <input type="email" class="form-control" name="correo" id="correo" placeholder="Ingrese su correo electronico" required value="<?php echo $lista['correo_Empleado']?>">
-              </div>
+                <label  class="form-label">Descripción:</label>
+                <input type="text" class="form-control" name="descripcion_proveedor" placeholder="Descripción" required value="<?php echo $lista['descripcion_proveedor']?>">
+            </div>
               <div class="col-12 col-md-12 col-lg-6">
-                <label  class="form-label">Dirección</label>
-                <input type="text" class="form-control" name="direccion" id="direccion" placeholder="Ciudad, Estado, País" required value="<?php echo $lista['direccion_Empleado']?>">
+                <label  class="form-label">Correo Electronico:</label>
+                <input type="email" class="form-control" name="correo_proveedor" id="correo" placeholder="Ingrese su correo electronico" required value="<?php echo $lista['correo_proveedor']?>">
               </div>
-              <div class="col-12 col-md-12 col-lg-6">
-                <label  class="form-label">Contraseña</label>
-                <input type="password" class="form-control" name="contrasena" id="contraseña" placeholder="Contraseña para el empleado" required value="<?php echo $lista['contra']?>">
-              </div>
-              <div class="col-12 col-md-12 col-lg-6">
-                <label class="form-label">¿El empleado será administrador?</label>
-                <select class="form-select" name="admin" id="admin" required>
-                  <option selected><?php echo $lista['admin_Empleado']?></option>
-                  <option value="Si">Sí</option>
-                  <option value="No">No</option>
-                </select>
-              </div>
-              <div class="col-12 col-md-12 col-lg-6">
-                <label class="form-label">Fecha de nacimiento</label>
-                <input type="date" class="form-control" name="nacimiento" id="nacimiento" required value="<?php echo $lista['fecha_nac_Empleado']?>">
-              </div>
-              
               <div class="col-6 col-md-6 col-lg-6 mt-5 text-center">
                 <input type="submit" class="btn btn-success" value="Modificar datos">
               </div>

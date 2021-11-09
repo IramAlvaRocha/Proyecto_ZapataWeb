@@ -1,3 +1,10 @@
+<?php
+include("scripts/seguridad_nav.php");
+    if($sesion_iniciada==0){
+        echo '<script language="javascript">alert("Usted no ha iniciado sesion.");</script>';
+        echo '<script lenguage="javascript">window.location.replace("login.php");</script>'; 
+    }
+?>
 <!doctype html>
 <html lang="es">
   <head>

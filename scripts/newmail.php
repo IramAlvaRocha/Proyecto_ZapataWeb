@@ -19,10 +19,10 @@
         $novistos = mysqli_fetch_array($consultada2);
         if(!empty($novistos))
         {
-            echo "<a href='notas.php'><img src='img/newmsg.png' width='100' height='100' style='float:right;'/></a>";
+            echo "<a href='notas.php'><img src='img/newmessage.png' width='45' height='41' style='float:right;'/></a>";
         }
         else{
-            echo "<a href='notas.php'><img src='img/msg.png' width='100' height='70' style='float:right;'/></a>"; 
+            echo "<a href='notas.php'><img src='img/message.png' width='46' height='36' style='float:right;'/></a>"; 
         }
         
     }

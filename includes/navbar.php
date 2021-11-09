@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light mb-3" class="bg-light">
+<nav class="navbar navbar-expand-lg navbar-light mb-3 " class="bg-light">
   <div class="container-fluid">
     <a class="navbar-brand mx-auto nombre-logo"  href="./index.php">
     <img src="./img/logo-final.png" alt="" width="50" height="50">
@@ -8,7 +8,7 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse text-center" id="navbarSupportedContent">
-      <ul class="navbar-nav mx-auto mb-2 mb-lg-0 items">
+      <ul class=" navbar-nav mx-auto mb-2 mb-lg-0 items">
         <li class="nav-item">
           <a class="nav-link active" href="./productos.php">PRODUCTOS</a>
         </li>

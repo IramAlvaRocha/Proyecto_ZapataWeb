@@ -6,6 +6,7 @@ $conexion=conectar();
 $nombre= $_POST['folio'];
 $contraseña= $_POST['contrasena'];
 $_SESSION["user"]=$nombre;
+$_SESSION["password"]=$contraseña;
 
 
  $consulta=("SELECT * FROM empleado WHERE folio_Empleado='$nombre' and contra='$contraseña'");
