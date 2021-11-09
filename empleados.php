@@ -41,6 +41,15 @@
               <label class="form-label">Folio de registro de empleado</label>
                 <input type="text" class="form-control" name="folio" id="folio" required>
               </div>
+               <div class="col-12 col-md-12 col-lg-6">
+                <label class="form-label">Sucursal</label>
+                <select class="form-select" name="sucursal" id="sucursal" required>
+                  <option selected>Selecciona una sucursal</option>
+                  <option value="Si">Sí</option>
+                  <option value="No">No</option>
+                </select>
+              </div>
+              <br><br>
               <div class="col-12 col-md-12 col-lg-12 mt-5 text-center">
                 <input type="submit" class="btn btn-success" value="Registrar empleado">
               </div>

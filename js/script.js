@@ -8,6 +8,14 @@ $(document).ready(function () {
     });
   });
 
+  $("#btn-sucursales").click(function (event) {
+    event.preventDefault();
+    $("#content").children().empty();
+    $.ajax("sucursales.php").done(function (response) {
+      $("#content").html(response);
+    });
+  });
+
   $("#btn-proveedores").click(function (event) {
     event.preventDefault();
     $("#content").children().empty();

@@ -57,15 +57,17 @@
 
         <div class="row shadow d-flex flex-row align-items-center p-3">
                 <div class="col-12 col-lg-6 d-flex flex-row justify-conten-evenly">
+                <form action="scripts/terminarventa.php" methood="POST">
                     <p class="input-group-text" id="inputGroup-sizing-default">Pago:</span> 
                     &nbsp;
                     <input type="text" name="total" id="total" class="form-control" placeholder="Ingrese el pago  " required>
                     &nbsp;&nbsp;&nbsp;&nbsp;
                 </div>
                 <div class="col-12 col-lg-3">
-                    <button  form="formventa" type="submit" class="btn btn-success">
-                        Terminar Venta
-                    </button>
+                    
+                    <input type="submit" class="btn btn-success" value="Terminar venta">
+
+                </form>
                 </div>
             </form>
             <div class="col-12 col-lg-3">
