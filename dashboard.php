@@ -146,4 +146,6 @@ include("scripts/seguridad_nav.php");
     </div>
 </div>
 
+
+
 <?php include 'includes/footer.php'; ?>
