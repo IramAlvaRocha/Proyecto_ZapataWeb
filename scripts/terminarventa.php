@@ -8,6 +8,15 @@ $total = $_SESSION['sumaprecio']; //Sacamos el total de la venta
 $folioemp = $_SESSION['empleado']; //Sacamos el folio del empleado
 $pago = $_GET['total']; //Sacamos con cuanto pagó el cliente.
 
+$conexion= conectar(); //Conexion a la bd
+
+//Sacar la sucursal del empleado 
+$consultaempleado = "SELECT * FROM empleado WHERE folio_Empleado = '$folioemp'";
+$resultadoempleado = mysqli_query($conexion, $consultaempleado);
+$row = mysqli_fetch_array($resultadoempleado);
+$sucursal = $row['sucursal_empleado'];
+
+
 $feria = $pago-$total;
 $ferianet= $feria*-1;
 if(isset($_SESSION['compras']))
@@ -35,7 +44,7 @@ if($total > $pago)
 else{
     $conexion = conectar();
 
-    $consulta = "INSERT INTO venta (folio_EmpleadoFK, fecha_Venta, total_Venta) VALUES ('$folioemp', '$fecha', '$total')";
+    $consulta = "INSERT INTO venta (folio_EmpleadoFK, fecha_Venta, total_Venta, sucursal_venta) VALUES ('$folioemp', '$fecha', '$total', '$sucursal')";
     $consultada = mysqli_query($conexion, $consulta);
 
 // Verificamos que se haya realizado correctamente la consulta

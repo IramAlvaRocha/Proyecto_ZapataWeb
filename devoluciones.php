@@ -19,6 +19,21 @@
             <label  class="form-label">Perdida</label>
             <input type="text" class="form-control" name="perdida" placeholder="Cantidad de dinero en perdidas" required>
           </div>
+          <div class="col-12 col-md-12 col-lg-6">
+                <label class="form-label">Sucursal</label>
+                <select class="form-select" name="sucursal" id="sucursal" required>
+                  <option selected>Seleccione una sucursal:</option>
+                  <?php
+                    include("scripts/conexion.php");
+                    $conexion=conectar();
+                    $consulta1="SELECT * FROM sucursal;";
+                    $resultado1=mysqli_query($conexion,$consulta1);
+                    while($lista1=mysqli_fetch_array($resultado1, MYSQLI_ASSOC)){
+                        echo '<option value="' . $lista1['nombre_sucursal'] . '">' . $lista1['nombre_sucursal'] . '</option>';
+                    }
+                  ?>
+                </select>
+              </div>
           <div class="col-md-12 mt-5 text-center">
             <input type="submit" class="btn btn-success" value="Registrar devolución">
           </div>
@@ -28,8 +43,6 @@
 </div>
 
 <?php
-      include("scripts/conexion.php");
-      $conexion=conectar();
 
       $consulta="SELECT * FROM devolucion;";
       $resultado=mysqli_query($conexion,$consulta);
@@ -46,6 +59,7 @@
                         <th scope="col">Motivo</th>
                         <th scope="col">Monto</th>
                         <th scope="col">Perdida</th>
+                        <th scope="col">Sucursal</th>
                         <th scope="col">Gestión</th>
                         </tr>
                     </thead>
@@ -59,6 +73,7 @@
                             echo '<td>' . $lista['motivo_Devolucion'] . '</td>';
                             echo '<td>' . $lista['monto_Devolucion'] . '</td>';
                             echo '<td>' . $lista['perdida_Devolucion'] . '</td>';
+                            echo '<td>' . $lista['sucursal_Devolucion'] . '</td>';
                             echo '<td>
                               <a href="modificardevoluciones.php?iddev=' . $lista["id_Devolucion"] . '" class="btn btn-outline-warning"><span class="iconify" data-icon="clarity:note-edit-solid" data-width="15"></span></a>  
                               <a href="scripts/eliminardevolucion.php?iddev=' . $lista["id_Devolucion"] . '" class="btn btn-outline-danger"><span class="iconify" data-icon="ant-design:delete-filled" data-width="15"></span></a> 

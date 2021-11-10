@@ -18,6 +18,7 @@
                     <tr>
                     <th scope="col">#Venta</th>
                     <th scope="col">Nombre de empleado</th>
+                    <th scope="col">Sucursal</th>
                     <th scope="col">Fecha de venta</th>
                     <th scope="col">Total de venta</th>
                     <th scope="col">Gestion</th>
@@ -31,6 +32,7 @@
                             echo '<tr>';
                             echo '<th scope="row">' . $contador . '</th>';
                             echo '<td>' . $lista['folio_EmpleadoFK'] . '</td>';
+                            echo '<td>' . $lista['sucursal_venta'] . '</td>';
                             echo '<td>' . $lista['fecha_Venta'] . '</td>';
                             echo '<td>$ ' . $lista['total_Venta'] . ' MXN</td>';
                             echo '<td>

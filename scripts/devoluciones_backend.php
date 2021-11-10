@@ -6,8 +6,9 @@
 	$fecha=$_POST['fecha'];
 	$monto=$_POST['monto'];
 	$perdida=$_POST['perdida'];
+	$sucursal=$_POST['sucursal'];
 
-	$consulta=("INSERT INTO `devolucion` (`fecha_Devolucion`,`motivo_Devolucion`,`monto_Devolucion`,`perdida_Devolucion`) VALUES ('$fecha','$motivo','$monto','$perdida');");
+	$consulta=("INSERT INTO `devolucion` (`fecha_Devolucion`,`motivo_Devolucion`,`monto_Devolucion`,`perdida_Devolucion`,`sucursal_Devolucion`) VALUES ('$fecha','$motivo','$monto','$perdida','$sucursal');");
  	$resultado= mysqli_query($conexion, $consulta);
 
  	if($resultado){

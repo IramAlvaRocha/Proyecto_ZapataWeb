@@ -11,14 +11,27 @@ if(!isset($_SESSION['empleado']))
     echo '<script language="javascript">alert("PRIMERO DEBE INICIAR SESIÓN");</script>';
     echo '<script lenguage="javascript">window.location.replace("login.php");</script>';
 }
-
-$consulta = "SELECT folio_Empleado, nombre_Empleado, correo_Empleado, direccion_Empleado FROM empleado";
+$sucursal= $_GET['sucursal'];
+$zona= $_GET['zona'];
+$consultazona= "SELECT * FROM sucursal WHERE zona_sucursal='$zona' AND nombre_sucursal='$sucursal'";
+$consultadazona= mysqli_query($conexion, $consultazona);
+$numfilas1 = mysqli_num_rows($consultadazona);
+if($numfilas1<1)
+{
+    echo '<script language="javascript">alert("Zona o sucursal equivocada, favor de intentar nuevamente");</script>';
+    echo '<script lenguage="javascript">window.location.replace("reportes.php");</script>';
+}
+$consulta = "SELECT folio_Empleado, nombre_Empleado, correo_Empleado, direccion_Empleado FROM empleado WHERE sucursal_empleado='$sucursal'";
 $consultada = mysqli_query($conexion, $consulta);
 
 $resultados = mysqli_fetch_array($consultada);
 $numfilas = mysqli_num_rows($consultada);
 $i=0;
-
+if($numfilas<1)
+{
+    echo '<script language="javascript">alert("NO HAY DATOS PARA MOSTRAR");</script>';
+    echo '<script lenguage="javascript">window.location.replace("reportes.php");</script>';
+}
 $consulta2 = "SELECT folio_EmpleadoFK FROM venta";
 $consultada2 = mysqli_query($conexion, $consulta2);
 
@@ -44,12 +57,16 @@ function Header()
     // Movernos a la derecha
     date_default_timezone_set("America/Monterrey");
     $fecha = date('Y-m-d   H:i:s');
+    $sucursal= $_GET['sucursal'];
+    $zona= $_GET['zona'];
     $this->Cell(80);
     // Título
     $this->Cell(30,10,'Reporte de empleados Zapatapp',0,1,'C');
     // Salto de línea
     $this->Ln(20);
     $this->Cell(180,-25,$fecha,0,1,'C');
+    $this->Ln(10);
+    $this->Cell(180,25,"Sucursal " . $sucursal,0,1,'C');
 }
 
 // Pie de página

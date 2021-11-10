@@ -36,6 +36,7 @@ function Header()
     // Salto de línea
     $this->Ln(20);
     $this->Cell(180,-25,$fecha,0,1,'C');
+
 }
 
 // Pie de página
