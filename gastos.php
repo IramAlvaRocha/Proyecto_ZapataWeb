@@ -38,6 +38,13 @@
     <div class="col-1"></div>
 </div>
 
+
+<div class="row mt-3">
+    <div class="col-1"></div>
+    <div class="col-10 p-3 border rounded shadow p-4 mb-5">
+<embed src="libreriasJS/chartJS/samples/grafica_gastos.php" type="application/pdf" width="123%" height="450px" />
+</div></div></div>
+
 <?php
 
       $consulta="SELECT * FROM gasto;";

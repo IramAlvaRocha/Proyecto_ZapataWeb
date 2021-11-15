@@ -97,7 +97,7 @@
         <form class="row g-3" method="post" action="reportes_backend.php">
         <div class="col-12 col-md-12 col-lg-6">
                 <label class="form-label">Tipo de Reporte</label>
-                <select class="form-select" name="tipo" id="zona" required>
+                <select class="form-select" name="tipo" id="reporte" required onchange="filtrado();">
                   <option selected>Selecciona tipo de reporte</option>
                   <option value="Ventas">Ventas</option>
                   <option value="Empleados">Empleados</option>
@@ -109,7 +109,7 @@
               <br><br>
               <div class="col-12 col-md-12 col-lg-6">
                 <label class="form-label">Zona:</label>
-                <select class="form-select" name="zona" id="sucursal" required>
+                <select class="form-select" name="zona" id="Zona" required onchange="filtrado();">
                   <option selected>Selecciona una zona</option>
                   <?php
                     include("scripts/conexion.php");
@@ -125,14 +125,16 @@
               <br><br>
               <div class="col-12 col-md-12 col-lg-6">
                 <label class="form-label">Sucursal</label>
-                <select class="form-select" name="sucursal" id="sucursal" required>
+                <select class="form-select" name="sucursal" id="sucursal" required onchange="filtrado();">
                   <option selected>Selecciona una sucursal</option>
                   <?php
                     $consulta1="SELECT * FROM sucursal;";
                     $resultado1=mysqli_query($conexion,$consulta1);
+                    $contador=0;
                     while($lista1=mysqli_fetch_array($resultado1, MYSQLI_ASSOC)){
-                        echo '<option value="' . $lista1['nombre_sucursal'] . '">' . $lista1['nombre_sucursal'] . '</option>';
-                    }
+                        echo '<option id="' . $contador . '" value="' . $lista1['nombre_sucursal'] . '">' . $lista1['nombre_sucursal'] . '</option>';
+                        $contador++;
+                      }
                   ?>
                 </select>
               </div>
@@ -145,3 +147,26 @@
       </div>
 </body>
 </html>
+
+<script>
+  function filtrado(){
+      var reporte=document.getElementById('reporte');
+      var zona=document.getElementById('Zona');
+      var sucursal=document.getElementById('sucursal');
+
+      /*for(var i=0;i<cont;i++){
+                    var id="sucursal"+(i+1);
+                    op_sucursal[i]=document.getElementById(id);
+                    
+      }*/
+      
+      if(reporte.value==="Productos"){
+        zona.disabled=true;
+        sucursal.disabled=true;
+      }else{
+        zona.disabled=false;
+        sucursal.disabled=false;
+      }
+
+  }
+</script>
